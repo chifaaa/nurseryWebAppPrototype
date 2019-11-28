@@ -26,9 +26,9 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 
-const RoutingFn = require('./app/routes/group.js/index.js')
+const RoutingFn = require('./app/routes/group.js')
 RoutingFn(app);
-const group = require('./app/models/group.js/index.js')
+const group = require('./app/models/group.js')
 
 // define a simple route
 // app.get('/create/group', (req, res) => {
