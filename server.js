@@ -6,6 +6,10 @@ var cors = require('cors')
 // create express app
 const app = express();
 app.use(cors())
+app.use((req, res, next) => {
+    console.log(req.originalUrl + " was called")
+    next()
+})
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -20,18 +24,20 @@ mongoose.Promise = global.Promise;
 
 // Connecting to the database
 mongoose.connect(dbConfig.url, {
-	useNewUrlParser: true
+    useNewUrlParser: true
 }).then(() => {
-    console.log("Successfully connected to the database");    
+    console.log("Successfully connected to the database");
 }).catch(err => {
     console.log('Could not connect to the database. Exiting now...', err);
     process.exit();
 });
 
-const RoutingFn = require('./app/routes/group.js')
-RoutingFn(app);
-const Routingbaby = require('./app/routes/baby.js')
-Routingbaby(app);
+const RoutingGroup = require('./app/routes/group.js')
+RoutingGroup(app);
+const RoutingBaby = require('./app/routes/baby.js')
+RoutingBaby(app);
+const RoutingParent = require('./app/routes/parent.js')
+RoutingParent(app);
 
 
 // define a simple route

@@ -1,7 +1,9 @@
 const Baby = require('../models/baby.js');
 const groupCtr = require('./group.js');
+
+
 exports.fetch = (name) => {
-    return Group.findOne({ name }).exec()
+    return Baby.findOne({ name }).exec()
 }
 // Create and Save a new Baby
 exports.create = (req, res) => {

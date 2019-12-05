@@ -26,7 +26,7 @@ class App extends Component {
  {/* <Route path="/BabyList"    render={(props) => (
   <BabyList key={(++counter).toString()}  a={++counter} {...props} />)   */}
 
-} />
+
  <Route  path="/modifyBaby/:id/:firstName/:lastName/:birthdate/:sex/:groupName"  component={modifyBaby}/>
 
 
