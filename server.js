@@ -1,9 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+var cors = require('cors')
+
 
 // create express app
 const app = express();
-
+app.use(cors())
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -28,7 +30,9 @@ mongoose.connect(dbConfig.url, {
 
 const RoutingFn = require('./app/routes/group.js')
 RoutingFn(app);
-const group = require('./app/models/group.js')
+const Routingbaby = require('./app/routes/baby.js')
+Routingbaby(app);
+
 
 // define a simple route
 // app.get('/create/group', (req, res) => {

@@ -1,22 +1,21 @@
-.App {
-  text-align: center;
+
+.plink{display: flex;justify-content:space-between;width: 219px;;
+
+  
+  flex-direction: row;justify-content: space-around;
+
+
 }
 
-.App-logo {
-  height: 40vmin;
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+.container_list {display: flex;flex-flow: row wrap;margin-left: 100px;
 
-.App-link {
-  color: #09d3ac;
+  justify-content: space-around;
+  width: 900px;
 }
+.container_list .elmt{width:242px;border:2px solid #000;margin-bottom: 15px;}
+.container_list .elmt p{font-size: 16px;padding: 5px}
+.container_list .elmt span{font-weight: bolder}
+
+
+.app_cont,form{margin-left: 400px;}
