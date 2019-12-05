@@ -1,130 +1,161 @@
 const Baby = require('../models/baby.js');
 const groupCtr = require('./group.js');
-
-// Create and Save a new Note
+exports.fetch = (name) => {
+    return Group.findOne({ name }).exec()
+}
+// Create and Save a new Baby
 exports.create = (req, res) => {
-    console.log('req', req)
     // Validate request
-    if(!(req.body.firstName && req.body.lastName && req.body.birthdate && req.body.groupName)) {
+    if (!(req.body.firstName && req.body.lastName && req.body.birthdate && req.body.groupName)) {
         return res.status(400).send({
-            message: "baby's firstname and lastname and birthdate and group can not be empty"
+            message: "baby's firstname and lastname and birthdate and groupName can not be empty"
         });
     }
 
     //many things to wait   ==> await
+
     const groupPromise = groupCtr.fetch(req.body.groupName)
-
-    groupPromise.then(doc => {
-
-    const baby = new Baby({
-            firstName: req.body.firstName, 
-            lastName: req.body.lastName,
-            birthdate:req.body.birthdate,
-            group: doc._id
-    });
-
-    } )
     // Create a Baby
-   
+    groupPromise.then(groupDoc => {
+        if (!groupDoc) {
+            return res.status(400).send({
+                message: "this groupName  not exist"
+            });
 
+        }
 
-
-    // Save Note in the database
-    note.save()
-    .then(data => {
-        res.send(data);
-    }).catch(err => {
-        res.status(500).send({
-            message: err.message || "Some error occurred while creating the Note."
+        const baby = new Baby({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            birthdate: req.body.birthdate,
+            group: groupDoc._id,
+            sex:req.body.sex
         });
-    });
+        // same thing for clubs
+
+        // Save baby in the database
+        baby.save()
+            .then(data => {
+                res.send(data);
+            }).catch(err => {
+                res.status(500).send({
+                    message: err.message || "Some error occurred while creating the baby."
+                });
+            });
+    }
+    )
+
+
+
+
+
 };
 
-// Retrieve and return all notes from the database.
+// Retrieve and return all babies from the database.
 exports.findAll = (req, res) => {
-    Note.find()
-    .then(notes => {
-        res.send(notes);
-    }).catch(err => {
-        res.status(500).send({
-            message: err.message || "Some error occurred while retrieving notes."
+    Baby.find()
+        .populate('group', 'name')
+        .then(babies => {
+            res.send(babies.map(baby => {
+                babyObj =   baby.toObject()
+                if (babyObj.group) { 
+                    babyObj.groupName = babyObj.group.name 
+                    delete babyObj.group
+                } 
+                return babyObj
+            }));
+        }).catch(err => {
+            res.status(500).send({
+                message: err.message || "Some error occurred while retrieving babies."
+            });
         });
-    });
 };
 
-// Find a single note with a noteId
+// Find a single baby with a babyId
 exports.findOne = (req, res) => {
-    Note.findById(req.params.noteId)
-    .then(note => {
-        if(!note) {
-            return res.status(404).send({
-                message: "Note not found with id " + req.params.noteId
-            });            
-        }
-        res.send(note);
-    }).catch(err => {
-        if(err.kind === 'ObjectId') {
-            return res.status(404).send({
-                message: "Note not found with id " + req.params.noteId
-            });                
-        }
-        return res.status(500).send({
-            message: "Error retrieving note with id " + req.params.noteId
+    Baby.findById(req.params.babyId)
+        .then(baby => {
+            if (!baby) {
+                return res.status(404).send({
+                    message: "baby not found with id " + req.params.babyId
+                });
+            }
+            res.send(baby);
+        }).catch(err => {
+            if (err.kind === 'ObjectId') {
+                return res.status(404).send({
+                    message: "Baby not found with id " + req.params.babyId
+                });
+            }
+            return res.status(500).send({
+                message: "Error retrieving baby with id " + req.params.babyId
+            });
         });
-    });
 };
 
-// Update a note identified by the noteId in the request
+// Update a baby identified by the babyId in the request
 exports.update = (req, res) => {
     // Validate Request
-    if(!req.body.content) {
+    if (!(req.body.firstName && req.body.lastName && req.body.birthdate && req.body.groupName && req.body.sex)) {
         return res.status(400).send({
-            message: "Note content can not be empty"
+            message: "baby's firstname and lastname and birthdate and groupName can not be empty"
         });
     }
-
-    // Find note and update it with the request body
-    Note.findByIdAndUpdate(req.params.noteId, {
-        title: req.body.title || "Untitled Note",
-        content: req.body.content
-    }, {new: true})
-    .then(note => {
-        if(!note) {
-            return res.status(404).send({
-                message: "Note not found with id " + req.params.noteId
+    groupCtr.fetch(req.body.groupName).then(groupDoc => {
+        if (!groupDoc) {
+            return res.status(400).send({
+                message: "this groupName  not exist"
             });
+
         }
-        res.send(note);
-    }).catch(err => {
-        if(err.kind === 'ObjectId') {
-            return res.status(404).send({
-                message: "Note not found with id " + req.params.noteId
-            });                
-        }
-        return res.status(500).send({
-            message: "Error updating note with id " + req.params.noteId
-        });
+        // Find baby and update it with the request body
+        Baby.findByIdAndUpdate(req.params.babyId, {
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            birthdate: req.body.birthdate,
+            sex: req.body.sex,
+            group: groupDoc._id
+
+        }, { new: true })
+            .then(baby => {
+                if (!baby) {
+                    return res.status(404).send({
+                        message: "Baby not found with id " + req.params.babyId
+                    });
+                }
+                res.send(baby);
+            }).catch(err => {
+                if (err.kind === 'ObjectId') {
+                    console.log(err)
+                    return res.status(404).send({
+                        message: "404 ObjectId error" + req.params.babyId
+                    });
+                }
+                return res.status(500).send({
+                    message: "Error updating baby with id " + req.params.babyId
+                });
+            });
     });
 };
 
-// Delete a note with the specified noteId in the request
+// Delete a baby with the specified noteId in the request
 exports.delete = (req, res) => {
-    Note.findByIdAndRemove(req.params.noteId)
-    .then(note => {
-        if(!note) {
-            return res.status(404).send({
-                message: "Note not found with id " + req.params.noteId
+    Baby.findByIdAndRemove(req.params.babyId)
+        .then(baby => {
+            if (!baby) {
+                return res.status(404).send({
+                    message: "Baby not found with id " + req.params.babyId
+                });
+            }
+            res.send({ message: "Baby deleted successfully!" });
+        }).catch(err => {
+            if (err.kind === 'ObjectId' || err.name === 'NotFound') {
+                return res.status(404).send({
+                    message: "baby not found with id " + req.params.babyId
+                });
+            }
+            return res.status(500).send({
+                message: "Could not delete baby with id " + req.params.babyId
             });
-        }
-        res.send({message: "Note deleted successfully!"});
-    }).catch(err => {
-        if(err.kind === 'ObjectId' || err.name === 'NotFound') {
-            return res.status(404).send({
-                message: "Note not found with id " + req.params.noteId
-            });                
-        }
-        return res.status(500).send({
-            message: "Could not delete note with id " + req.params.noteId
         });
-    });
 };
