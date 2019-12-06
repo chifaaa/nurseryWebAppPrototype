@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link } from 'react-router-dom';
  
 import axios from 'axios'
-class ModifyBaby extends Component {
+class ModifyParent extends Component {
     constructor(props){
         super(props)
         this.state=({
@@ -84,7 +84,7 @@ return (
 <div> <label>adress :</label>
 <input value={this.state.adress} type="text" onChange={(e)=>{this.setState({adress:e.target.value})}}/>
 </div>
-<Link to="/parentList"> <p onClick={this.modifyParent}>Modifier</p>
+<Link to="/inscription/ParentsList"> <p onClick={this.modifyParent}>Modifier</p>
 </Link> 
 </div>
     
@@ -95,4 +95,4 @@ return (
     }
 }
  
-export default ModifyBaby;
+export default ModifyParent;

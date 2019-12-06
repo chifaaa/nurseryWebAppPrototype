@@ -90,7 +90,7 @@ else { alert('Required fields!! Name and tel and email and birthdate') }
         <br/>
   
              
-        <Link to="/babyList"> <span onClick={this.addBaby} >Submit</span> </Link> 
+        <Link to="/inscription/BabyList"> <span onClick={this.addBaby} >Submit</span> </Link> 
   
 
      </form>    

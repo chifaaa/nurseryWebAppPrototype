@@ -84,7 +84,7 @@ return (
 <div> <label>groupName :</label>
 <input value={this.state.groupName} type="text" onChange={(e)=>{this.setState({groupName:e.target.value})}}/>
 </div>
-<Link to="/babyList"> <p onClick={this.modifyBaby}>Modifier</p>
+<Link to="/inscription/BabyList"> <p onClick={this.modifyBaby}>Modifier</p>
 </Link> 
 </div>
     

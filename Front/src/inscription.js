@@ -11,12 +11,16 @@ class Inscription extends Component {
     return ( 
     <div>
       <div className="app_cont">
+
       <h1>Our Babies </h1>
-    
       <p className="plink">  <Link to="/inscription/BabyList"><span>Baby list</span></Link>
       <Link to="/inscription/BabyNew"><span>Add Baby</span></Link>
         </p>
  
+      <h1>Parents </h1>
+      <p className="plink">  <Link to="/inscription/ParentsList"><span>Parents list</span></Link>
+      <Link to="/inscription/ParentNew"><span>Add Parent</span></Link>
+        </p>
       </div>
      
  
