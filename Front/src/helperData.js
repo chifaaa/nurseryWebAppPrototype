@@ -9,13 +9,13 @@ export const parents=[
 ]
 
 export const child=[
-    {id:330,age:3,sexe:'home',firstName:'weal',lastName:'hajri'},
-    {id:331,age:2,sexe:'home',firstName:'loua',lastName:'fahmi'},
-    {id:332,age:3,sexe:'home',firstName:'lamjid',lastName:'amairi'},
-    {id:333,age:3,sexe:'home',firstName:'fathi',lastName:'yaakoubi'},
-    {id:334,age:3,sexe:'home',firstName:'radhi',lastName:'bouali'},
-    {id:335,age:3,sexe:'home',firstName:'moujib',lastName:'arfi'},
-    {id:337,age:3,sexe:'home',firstName:'youssef',lastName:'hamroun'},
+    {id:330,idParent:1, age:3,sexe:'home',firstName:'weal',lastName:'hajri'},
+    {id:331,idParent:1, age:2,sexe:'home',firstName:'loua',lastName:'fahmi'},
+    {id:332,idParent:1, age:3,sexe:'home',firstName:'lamjid',lastName:'amairi'},
+    {id:333,idParent:2, age:3,sexe:'home',firstName:'fathi',lastName:'yaakoubi'},
+    {id:334,idParent:2, age:3,sexe:'home',firstName:'radhi',lastName:'bouali'},
+    {id:335,idParent:3, age:3,sexe:'home',firstName:'moujib',lastName:'arfi'},
+    {id:337,idParent:3, age:3,sexe:'home',firstName:'youssef',lastName:'hamroun'},
 ]
 
 export const prof=[
