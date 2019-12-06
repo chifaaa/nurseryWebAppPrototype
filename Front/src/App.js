@@ -1,60 +1,61 @@
-import React, { Component } from 'react';
-//import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import BabyList from './components/listBabies'
+import React from 'react';
+import Navb from './components/nav';
+import Car from './components/carousel';
+import './App.css';
+import { Features } from './components/features';
+import stork from './cigue.png'
+import { BrowserRouter as Router, Route,Switch,Link } from 'react-router-dom';
+import Inscription from './inscription';
 import BabyAdd from './components/addBaby'
+import BabyList from './components/listBabies'
 import modifyBaby from './components/modifyBaby'
 
-import ParentList from './components/listParents'
-import ParentAdd from './components/addParent'
-import modifyParent from './components/modifyParent'
-
-import './App.css';
-
-var counter = 0;
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <div className="app_cont">
-          <h1>Our Babies </h1>
-
-          <p className="plink">  <Link to="/BabyList"><span>Baby list</span></Link>
-            <Link to="/BabyNew"><span>Add Baby</span></Link>
-          </p>
-
-        </div>
-        <Route path="/BabyNew" component={BabyAdd} />
-
-        <Route path="/BabyList" component={BabyList} />
-        {/* <Route path="/BabyList"    render={(props) => (
-  <BabyList key={(++counter).toString()}  a={++counter} {...props} />)   */}
-
-
-        <Route path="/modifyBaby/:id/:firstName/:lastName/:birthdate/:sex/:groupName" component={modifyBaby} />
-
-        {/* parent page */}
-
-        <div className="app_cont">
-          <h1>Our Parents </h1>
-
-          <p className="plink">  <Link to="/ParentList"><span>Parent list</span></Link>
-            <Link to="/ParentNew"><span>Add Parent</span></Link>
-          </p>
-
-        </div>
-        <Route path="/ParentNew" component={ParentAdd} />
-
-        <Route path="/ParentList" component={ParentList} />
+function App() {
+  return (
+    
+    <Router>
+       
+         <Route exact path ={'/'} render ={()=> 
+         <div>
+            <div className="App">
+     <div className='logoandnav'>
+       <img className='logo' src={stork}/> 
+       <div className='logotextcontainer'><p className='logotext'>Baby<br/>Storks</p></div>
+       
+       
+     <div className='navcontainer'><Navb/></div>
+     </div>
+     <Car/>
+     {/* <div className="diva" style={{backgroundColor:'black'}}>here</div> */}
+     <Features/>
+     <footer>
+    <p>
+        Follow Us On: 
         
+        <span className="country-link">Facebook</span>, 
+        <span className="country-link">YouTube</span>, 
+        <span className="country-link">Instagram</span> and 
+        <span className="country-link">Twitter</span> <br/><br/>
+        This site uses cookies to deliver services in accordance with this Privacy Policy. You can specify the
+        conditions for storing or accessing cookies on your browser.<br/>
+        www.babystorks.com © 2019
+    </p>
+    </footer> 
 
+  </div>
+         </div>
 
-        <Route path="/modifyParent/:id/:firstName/:lastName/:tel/:email/:adress" component={modifyParent} />
+         }/>
+      
+      <Route path="/inscription" component ={Inscription}/>
+      <Route path="/inscription/BabyNew" component={BabyAdd}/>
+      <Route path="/inscription/BabyList" component={BabyList}/>  
 
+ <Route  path="/modifyBaby/:id/:firstName/:lastName/:birthdate/:sex/:groupName"  component={modifyBaby}/>
 
-      </Router>
-    );
-  }
+    </Router>
+
+  );
 }
 
 export default App;
