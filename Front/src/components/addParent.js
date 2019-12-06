@@ -35,7 +35,7 @@ class ParentAdd extends Component {
     
   })}
   setAdress=e=> {  this.setState({
-    groupName:e.target.value
+    adress:e.target.value
     
   })}
 
@@ -73,15 +73,15 @@ else { alert('Required fields!! Name and tel and email and adress') }
         <br/>
         <span className="subtitle">TEL:</span>
         <br/>
-        <input type="BIRTHDATE" onChange={this.setTel}  />
+        <input type="text" onChange={this.setTel}  />
         <br/>
         <span className="subtitle"> EMAIL:</span>
         <br/>
-        <input type="text" onChange={this.setSex}  />
+        <input type="text" onChange={this.setEmail}  />
         <br/>
         <span className="subtitle">ADRESS:</span>
         <br/>
-        <input type="text" onChange={this.setGroupName}  />
+        <input type="text" onChange={this.setAdress}  />
         <br/>
    
         <br/>
@@ -90,7 +90,7 @@ else { alert('Required fields!! Name and tel and email and adress') }
         <br/>
   
              
-        <Link to="/parentList"> <span onClick={this.addParent} >Submit</span> </Link> 
+        <Link to="/inscription/ParentsList"> <span onClick={this.addParent} >Submit</span> </Link> 
   
 
      </form>    

@@ -9,6 +9,10 @@ import Inscription from './inscription';
 import BabyAdd from './components/addBaby'
 import BabyList from './components/listBabies'
 import modifyBaby from './components/modifyBaby'
+import ParentAdd from './components/addParent'
+import ParentList from './components/listParents'
+import ModifyParent from './components/modifyParent'
+
 
 function App() {
   return (
@@ -49,9 +53,12 @@ function App() {
       
       <Route path="/inscription" component ={Inscription}/>
       <Route path="/inscription/BabyNew" component={BabyAdd}/>
-      <Route path="/inscription/BabyList" component={BabyList}/>  
-
- <Route  path="/modifyBaby/:id/:firstName/:lastName/:birthdate/:sex/:groupName"  component={modifyBaby}/>
+      <Route path="/inscription/BabyList" component={BabyList}/> 
+      <Route  path="/modifyBaby/:id/:firstName/:lastName/:birthdate/:sex/:groupName"  component={modifyBaby}/>
+ 
+      <Route path="/inscription/ParentNew" component={ParentAdd}/>
+      <Route path="/inscription/ParentsList" component={ParentList}/>
+      <Route  path="/modifyparent/:id/:firstName/:lastName/:tel/:email/:adress"  component={ModifyParent}/>
 
     </Router>
 
