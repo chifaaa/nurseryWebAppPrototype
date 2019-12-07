@@ -9,9 +9,9 @@ exports.fetch = (name) => {
 // Create and Save a new Baby
 exports.create = (req, res) => {
     // Validate request
-    if (!(req.body.firstName && req.body.lastName && req.body.birthdate && req.body.groupName)) {
+    if (!(req.body.firstName && req.body.lastName && req.body.birthdate && req.body.groupName && req.body.parentId && req.body.sex)) {
         return res.status(400).send({
-            message: "baby's firstname and lastname and birthdate and groupName can not be empty"
+            message: "baby's firstname and lastname and birthdate and groupName and parentId and sex can not be empty"
         });
     }
 
