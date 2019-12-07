@@ -12,11 +12,11 @@ class Inscription extends Component {
     <div>
       <div className="app_cont">
 
-      <h1>Our Babies </h1>
+      <h1 className="title_page">Our Babies </h1>
       <p className="plink">  <Link to="/inscription/BabyList"><span>Baby list</span></Link>
         </p>
  
-      <h1>Parents </h1>
+      <h1>List Parents </h1>
       <p className="plink">  <Link to="/inscription/ParentsList"><span>Parents list</span></Link>
       <Link to="/inscription/ParentNew"><span>Add Parent</span></Link>
         </p>

@@ -85,6 +85,9 @@ flex-wrap: wrap;
 .featuresdescription{
   padding: 20px;
 }
+.app_cont{
+color:grey ;
+}
 
 
 
@@ -107,9 +110,21 @@ flex-wrap: wrap;
   justify-content: space-around;
   width: 900px;
 }
-.container_list .elmt{width:242px;border:2px solid #000;margin-bottom: 15px;}
+.container_list .elmt{width:242px;border:5px solid #FFB458;margin-bottom: 15px; border-radius: 10px;}
 .container_list .elmt p{font-size: 16px;padding: 5px}
 .container_list .elmt span{font-weight: bolder}
 
 
 .app_cont,form{margin-left: 400px;}
+.text_form{
+  color:#81CAFF;
+}
+
+.logo_baby{width: 200px;
+  height: 100px;
+
+}
+.button_list{
+  margin: 5px;
+  border-radius: 10px;
+}
