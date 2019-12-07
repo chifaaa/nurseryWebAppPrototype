@@ -1,7 +1,11 @@
 const Parent = require('../models/parent.js');
 const babyCtr = require('./baby');
 
-
+exports.addBaby =(parentId,babyId)=>{
+   return Parent.findByIdAndUpdate(parentId,{
+       babies:[babyId]
+   }, { new: true }).exec()
+}
 
 // Create and Save a new Parent
 exports.create = (req, res) => {
