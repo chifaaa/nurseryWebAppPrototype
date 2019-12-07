@@ -86,6 +86,7 @@ return (
 </div>
 <Link to="/inscription/ParentsList"> <p onClick={this.modifyParent}>Modifier</p>
 </Link> 
+<Link to={`/inscription/BabyNew/${this.state.id}`}><span>Add Baby</span></Link>
 </div>
     
 );

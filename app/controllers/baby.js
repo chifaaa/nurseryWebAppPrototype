@@ -1,5 +1,6 @@
 const Baby = require('../models/baby.js');
 const groupCtr = require('./group.js');
+const parentCtr = require('./parent.js');
 
 
 exports.fetch = (name) => {
@@ -31,17 +32,23 @@ exports.create = (req, res) => {
             lastName: req.body.lastName,
             birthdate: req.body.birthdate,
             group: groupDoc._id,
-            sex:req.body.sex
+            sex: req.body.sex
         });
         // same thing for clubs
 
         // Save baby in the database
         baby.save()
-            .then(data => {
-                res.send(data);
+            .then(babyDoc => {
+                parentCtr.addBaby(req.body.parentId, babyDoc._id)
+                    .then((parentDoc) => res.send(parentDoc))
+                    .catch(err => {
+                        res.status(500).send({
+                            message: err.message || "Some error occurred while updating parent."
+                        });
+                    });
             }).catch(err => {
                 res.status(500).send({
-                    message: err.message || "Some error occurred while creating the baby."
+                    message: err.message || "Some error occurred while saving the baby."
                 });
             });
     }
@@ -59,11 +66,11 @@ exports.findAll = (req, res) => {
         .populate('group', 'name')
         .then(babies => {
             res.send(babies.map(baby => {
-                babyObj =   baby.toObject()
-                if (babyObj.group) { 
-                    babyObj.groupName = babyObj.group.name 
+                babyObj = baby.toObject()
+                if (babyObj.group) {
+                    babyObj.groupName = babyObj.group.name
                     delete babyObj.group
-                } 
+                }
                 return babyObj
             }));
         }).catch(err => {

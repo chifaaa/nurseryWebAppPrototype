@@ -14,7 +14,6 @@ class Inscription extends Component {
 
       <h1>Our Babies </h1>
       <p className="plink">  <Link to="/inscription/BabyList"><span>Baby list</span></Link>
-      <Link to="/inscription/BabyNew"><span>Add Baby</span></Link>
         </p>
  
       <h1>Parents </h1>
