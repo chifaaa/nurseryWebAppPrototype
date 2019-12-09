@@ -30,7 +30,7 @@ exports.create = (req, res) => {
         const baby = new Baby({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
-            birthdate: req.body.birthdate.toDateString(),
+            birthdate: req.body.birthdate,
             group: groupDoc._id,
             sex: req.body.sex
         });

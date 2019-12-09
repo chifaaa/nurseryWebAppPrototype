@@ -59,7 +59,7 @@ class BabyList extends Component {
                                                 <div className="card">
                                                     <div className="card-body text-center mt-4">
                                                         <h4 className="card-title">{el.firstName} {el.lastName}</h4>
-                                                        <p className="card-text"><strong>Birthdate:</strong> {el.birthdate}</p>
+                                                        <p className="card-text"><strong>Birthdate:</strong> {el.birthdate.substring(0,10)}</p>
                                                         <p className="card-text"><strong>Sex:</strong> {el.sex}</p>
                                                         <p className="card-text"><strong>Group:</strong> {el.groupName}</p>
                                                         <ul className="list-inline">
@@ -68,7 +68,7 @@ class BabyList extends Component {
 
 
 
-                                                            <Link  class="btn btn-primary"  to={`/modifybaby/${el._id}/${el.firstName}/${el.lastName}/${el.birthdate}/${el.sex}/${el.groupName}`}><i class="fas fa-edit"> Edit</i></Link>
+                                                            <Link  class="btn btn-primary"  to={`/modifybaby/${el._id}/${el.firstName}/${el.lastName}/${el.birthdate.substring(0,10)}/${el.sex}/${el.groupName}`}><i class="fas fa-edit"> Edit</i></Link>
  
                                                                 
                                                             
