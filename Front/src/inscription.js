@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 
-
-import './App.css';
-
 var counter = 0;
 class Inscription extends Component {
   render() { 

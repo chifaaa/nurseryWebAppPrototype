@@ -11,7 +11,7 @@ exports.addBaby =(parentId,babyId)=>{
 exports.create = (req, res) => {
     console.log("parent create was called")
     // Validate request
-    if (!(req.body.firstName && req.body.lastName && req.body.tel && req.body.email && req.body.adress)) {
+    if (!(req.body.firstName && req.body.lastName && req.body.tel && req.body.email && req.body.adress&& req.body.sex)) {
         return res.status(400).send({
             message: "Parent's firstname and lastname and tel and adress and email can not be empty"
         });
@@ -28,6 +28,7 @@ exports.create = (req, res) => {
         lastName: req.body.lastName,
         email: req.body.email,
         adress: req.body.adress,
+        sex:req.body.sex,
 
         tel: req.body.tel
     });
@@ -96,7 +97,7 @@ exports.findOne = (req, res) => {
 // Update a Parent identified by the ParentId in the request
 exports.update = (req, res) => {
     // Validate Request
-    if (!(req.body.firstName && req.body.lastName && req.body.tel && req.body.email&& req.body.adress)) {
+    if (!(req.body.firstName && req.body.lastName && req.body.tel && req.body.email&& req.body.adress&& req.body.sex)) {
         return res.status(400).send({
             message: "Parent's firstname and lastname and  tel and adress and email can not be empty"
         });
@@ -114,7 +115,8 @@ exports.update = (req, res) => {
             lastName: req.body.lastName,
             tel: req.body.tel,
             email: req.body.email,
-            adress: req.body.adress
+            adress: req.body.adress,
+            sex: req.body.sex
 
         }, { new: true })
             .then(parent => {

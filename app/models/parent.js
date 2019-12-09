@@ -6,6 +6,7 @@ lastName: String,
 email: String,
 adress: String,
 tel:String,
+sex:String,
 babies: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Baby' }],
 }, );
 

@@ -33,37 +33,80 @@ class ParentList extends Component {
   render() {
     return (
 
+      <section id="team" className="pb-5">
+      <div className="container">
+          <h5 className="section-title h1">Parent's List'</h5>
+          <div className="row">
+              {this.state.parents.map((el, i) => {
+                  const defaultImgUrl = el.sex == "male" ? "https://sophieriehl.com/wp-content/uploads/2017/06/male.png" : "http://www.victoire-avocats.eu/wp-content/uploads/2018/12/circled_user_female1600.png"
 
-      <div className="container_list">
-        {this.state.parents.map((el, i) => {
-          return (
-            <div className="elmt" key={i} >
+                  return (
+                      <div className="col-xs-12 col-sm-6 col-md-4">
+                          <div className="image-flip" ontouchstart="this.classList.toggle('hover');">
+                              <div className="mainflip">
+                                  <div className="frontside">
+                                      <div className="card">
+                                          <div className="card-body text-center">
+                                              <p><img className=" img-fluid" src={defaultImgUrl} alt="card image" /></p>
+                                              <h4 className="card-title">{el.firstName} {el.lastName}</h4>
+                                              <p className="card-text"><strong>{el.firstName}'s email:</strong> {el.email}.</p>
+                                          </div>
+                                          <div className= "center_button">
+                                              <a href="#" className="btn btn-primary"><i className="fas fa-eye">View</i></a>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div className="backside">
+                                      <div className="card">
+                                          <div className="card-body text-center mt-4">
+                                              <h4 className="card-title">{el.firstName} {el.lastName}</h4>
+                                              
+                                              <p className="card-text"><strong>Sex:</strong> {el.sex}</p>
+                                              <p className="card-text"><strong>Adress:</strong> {el.adress}</p>
+                                              <p className="card-text"><strong>Tel:</strong> {el.tel}</p>
+                                              <p className="card-text"><strong>Email:</strong> {el.email}</p>
+                                              <ul className="list-inline">
+                                              </ul>
+                                          </div>
+                                          <div className= "center_button">
+                                              <a href="#" class="btn btn-primary  btn-delete"> <i class="fas fa-trash" > <span onClick={() => { this.delete(el._id) }} >Delete</span></i></a>
+                                              <Link class="btn btn-primary" to={`/modifyparent/${el._id}/${el.firstName}/${el.lastName}/${el.tel}/${el.email}/${el.adress}/${el.sex}`}><i class="fas fa-edit"> Edit</i></Link>
 
+                                          </div>
 
-              <p><span>firstName :</span>{el.firstName}</p>
-              <p> <span>lastName :</span>{el.lastName}</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  )
+              })}
 
-              <p><span>tel:</span>{el.tel}</p>
-              <p><span>email:</span>{el.email}</p>
-              <p><span>adress:</span>{el.adress}</p>
-
-
-              <button ><span onClick={() => { this.delete(el._id) }}>Supprimer</span></button>
-
-
-              <button ><Link to={`/modifyparent/${el._id}/${el.firstName}/${el.lastName}/${el.tel}/${el.email}/${el.adress}`}><span>Modifier</span></Link></button>
-
-            </div>
-          )
-        })}
+          </div>
       </div>
+  </section>
 
 
 
 
 
-    );
-  }
+);
 }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default ParentList;
