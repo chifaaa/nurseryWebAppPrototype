@@ -54,7 +54,7 @@ class ModifyBaby extends Component {
       <section id="team" className="pb-5">
 
         <div className="col-xs-12 col-sm-6 col-md-4">
-
+        <div className="edit">
           <div className="frontside">
             <div className="card">
 
@@ -89,10 +89,13 @@ class ModifyBaby extends Component {
                   <div> <label>Group: </label>
                     <input value={this.state.groupName} type="text" onChange={(e) => { this.setState({ groupName: e.target.value }) }} />
                   </div>
-                  <Link  class="btn btn-primary" to="/inscription/BabyList" onClick={this.modifyBaby}><i class="fas fa-save"> Save</i>
-                  </Link>
+                  
+                  
                 </div>
-
+                <div className="center_button">
+                <Link  class="btn btn-primary" to="/inscription/BabyList" onClick={this.modifyBaby}><i class="fas fa-save"> Save</i></Link>
+                </div>
+                </div>
               </div>
             </div>
           </div>

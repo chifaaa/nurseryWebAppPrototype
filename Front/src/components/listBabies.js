@@ -51,6 +51,8 @@ class BabyList extends Component {
                                                         <p><img className=" img-fluid" src={defaultImgUrl} alt="card image" /></p>
                                                         <h4 className="card-title">{el.firstName} {el.lastName}</h4>
                                                         <p className="card-text">this lovely baby belongs to the group <strong>{el.groupName}</strong>.</p>
+                                                    </div>
+                                                    <div className= "center_button">
                                                         <a href="#" className="btn btn-primary"><i className="fas fa-eye">View</i></a>
                                                     </div>
                                                 </div>
@@ -59,42 +61,36 @@ class BabyList extends Component {
                                                 <div className="card">
                                                     <div className="card-body text-center mt-4">
                                                         <h4 className="card-title">{el.firstName} {el.lastName}</h4>
-                                                        <p className="card-text"><strong>Birthdate:</strong> {el.birthdate.substring(0,10)}</p>
+                                                        <p className="card-text"><strong>Birthdate:</strong> {el.birthdate.substring(0, 10)}</p>
                                                         <p className="card-text"><strong>Sex:</strong> {el.sex}</p>
                                                         <p className="card-text"><strong>Group:</strong> {el.groupName}</p>
                                                         <ul className="list-inline">
-
-                                                            <a href="#" class="btn btn-primary  btn-delete"> <i class="fas fa-trash" > <span onClick={() => { this.delete(el._id) }} >Delete</span></i></a>
-
-
-
-                                                            <Link  class="btn btn-primary"  to={`/modifybaby/${el._id}/${el.firstName}/${el.lastName}/${el.birthdate.substring(0,10)}/${el.sex}/${el.groupName}`}><i class="fas fa-edit"> Edit</i></Link>
- 
-                                                                
-                                                            
-                                                            
-                                                            
-                                                            
-                                                        </ul> 
+                                                        </ul>
                                                     </div>
-                                                </div>
+                                                    <div className= "center_button">
+                                                        <a href="#" class="btn btn-primary  btn-delete"> <i class="fas fa-trash" > <span onClick={() => { this.delete(el._id) }} >Delete</span></i></a>
+                                                        <Link class="btn btn-primary" to={`/modifybaby/${el._id}/${el.firstName}/${el.lastName}/${el.birthdate.substring(0, 10)}/${el.sex}/${el.groupName}`}><i class="fas fa-edit"> Edit</i></Link>
+
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
-                                        )
-                                    })}
-            
-                    </div>
+                                    </div>
                                 </div>
+                            )
+                        })}
+
+                    </div>
+                </div>
             </section>
 
 
 
 
 
-                    );
-                }
-            }
-            
-            export default BabyList;
+        );
+    }
+}
+
+export default BabyList;

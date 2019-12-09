@@ -189,6 +189,8 @@ section .section-title {
     -ms-transform: rotateY(0deg);
     z-index: 2;
     margin-bottom: 30px;
+    
+  
 }
 
 .backside {
@@ -229,7 +231,9 @@ section .section-title {
 
 .frontside .card,
 .backside .card {
-    min-height: 312px;
+    height: 400px;
+    width: 350px;
+    
 }
 
 .card a.btn-primary {
@@ -277,4 +281,12 @@ a.btn:hover {
 background: #eeeeee;
 display: table-cell; 
 width: 100%;
+}
+.edit .frontside {
+  width:350px;
+
+}
+.center_button{
+  display: flex;
+  justify-content: center;
 }

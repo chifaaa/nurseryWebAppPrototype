@@ -55,51 +55,72 @@ else { alert('Required fields!! Name and tel and email and birthdate') }
         return ( 
 
        
-           <form >
-        <h2>
-          ADD baby
-        </h2>
-        <br/>
-        <br/>
-        <span className="subtitle">FIRSTNAME:</span>
-        <br/>
-        <input type="text" onChange={this.setName}  />
-        <br/>
-        <span className="subtitle">LASTNAME:</span>
-        <br/>
-        <input type="text" onChange={this.setLastname}  />
-        <br/>
-        <br/>
-        <span className="subtitle">BIRTHDATE:</span>
-        <br/>
-        <input type="BIRTHDATE" onChange={this.setBirthdate}  />
-        <br/>
-        <span className="subtitle"> SEX:</span>
-        <br/>
-        <input type="text" onChange={this.setSex}  />
-        <br/>
-        <span className="subtitle">GROUPNAME:</span>
-        <br/>
-        <input type="text" onChange={this.setGroupName}  />
-        <br/>
-   
-        <br/>
-       
-  
-        <br/>
-  
-             
-        <Link to="/inscription/BabyList"> <span onClick={this.addBaby} >Submit</span> </Link> 
-  
+          <section id="team" className="pb-5">
 
-     </form>    
-
-
- 
-
-      
-      );
-    }
-}
+          <div className="col-xs-12 col-sm-6 col-md-4">
+          <div className="edit">
+            <div className="frontside">
+              <div className="card">
+          
+                <div className="card-body">
+                  <h4 className="card-title"> Add Baby</h4>
+          
+                  <div>
+                    <div> <label >First name :</label>
+          
+                      <input onChange={this.setFirstname} />
+          
+          
+                    </div>
+          
+          
+          
+                    <div> <label>Last name :</label>
+          
+                      <input onChange={this.setLastname} type="text" />
+          
+                    </div>
+          
+          
+                    <div> <label>Sex:</label>
+                      <input onChange={this.setSex} type="text" />
+                    </div>
+          
+                    <div> <label>Birthdate: </label>
+                      <input onChange={this.setBirthdate} type="text"  />
+                    </div>
+          
+                    <div> <label>Group: </label>
+                      <input onChange={this.setGroupName} type="text" />
+                    </div>
+                    
+                    
+                  </div>
+                  <div className="center_button">
+                  <Link  class="btn btn-primary" to="/inscription/BabyList" onClick={this.addyBaby}><i class="fas fa-save"> Save</i></Link>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </section>
+          
+          
+          
+          )
+          }
+          };
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
  
 export default BabyAdd ;
