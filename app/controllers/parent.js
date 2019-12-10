@@ -3,7 +3,7 @@ const babyCtr = require('./baby');
 
 exports.addBaby =(parentId,babyId)=>{
    return Parent.findByIdAndUpdate(parentId,{
-       babies:[babyId]
+     $push: {  babies: babyId }   
    }, { new: true }).exec()
 }
 
@@ -13,14 +13,11 @@ exports.create = (req, res) => {
     // Validate request
     if (!(req.body.firstName && req.body.lastName && req.body.tel && req.body.email && req.body.adress&& req.body.sex)) {
         return res.status(400).send({
-            message: "Parent's firstname and lastname and tel and adress and email can not be empty"
+            message: "Parent's firstname and lastname and tel and adress and email and sex can not be empty"
         });
     }
 
-    //many things to wait   ==> await
-
-    const babyPromise = babyCtr.fetch(req.body.babyName)
-    // Create a Parent
+    //many things to wait   ==> await    // Create a Parent
 
 
     const parent = new Parent({
