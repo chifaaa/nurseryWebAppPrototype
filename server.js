@@ -38,6 +38,8 @@ const RoutingBaby = require('./app/routes/baby.js')
 RoutingBaby(app);
 const RoutingParent = require('./app/routes/parent.js')
 RoutingParent(app);
+const RoutingAssistant = require('./app/routes/assistant.js')
+RoutingAssistant(app);
 
 
 // define a simple route
