@@ -14,7 +14,7 @@ class BabyAdd extends Component {
   }
 
 
-  setName=e=> { 
+  setFirstname=e=> { 
 
     this.setState({
     firstName:e.target.value
@@ -97,7 +97,7 @@ else { alert('Required fields!! Name and tel and email and birthdate') }
                     
                   </div>
                   <div className="center_button">
-                  <Link  class="btn btn-primary" to="/inscription/BabyList" onClick={this.addyBaby}><i class="fas fa-save"> Save</i></Link>
+                  <Link  class="btn btn-primary" to="/inscription/BabyList" onClick={this.addBaby}><i class="fas fa-save"> Save</i></Link>
                   </div>
                   </div>
                 </div>

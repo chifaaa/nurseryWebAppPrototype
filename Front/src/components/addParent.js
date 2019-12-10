@@ -15,41 +15,41 @@ class ParentAdd extends Component {
   }
 
 
-  setName = e => {
+  setfirstName = e => {
 
     this.setState({
-      firstName: e.target.onChange
+      firstName: e.target.value
 
     })
   }
   setLastname = e => {
     this.setState({
-      lastName: e.target.onChange
+      lastName: e.target.value
 
     })
   }
 
   setTel = e => {
     this.setState({
-      tel: e.target.onChange
+      tel: e.target.value
 
     })
   }
   setEmail = e => {
     this.setState({
-      email: e.target.onChange
+      email: e.target.value
 
     })
   }
   setAdress = e => {
     this.setState({
-      adress: e.target.onChange
+      adress: e.target.value
 
     })
   }
   setSex = e => {
     this.setState({
-      sex: e.target.onChange
+      sex: e.target.value
 
     })
   }
@@ -57,7 +57,7 @@ class ParentAdd extends Component {
   addParent = () => {
     if (this.state.firstName !== '' && (this.state.lastName !== '' || this.state.tel !== '' || this.state.adress !== '' || this.state.email !== '')) {
       axios.post("http://localhost:3000/parent/create", {
-        firstName: this.state.firstName, lastName: this.state.lastName, tel: this.state.tel, email: this.state.email, adress: this.state.adress
+        firstName: this.state.firstName, lastName: this.state.lastName, tel: this.state.tel, email: this.state.email, adress: this.state.adress,sex: this.state.sex
       })
 
     }
@@ -86,7 +86,7 @@ class ParentAdd extends Component {
         <div>
           <div> <label >First name :</label>
 
-            <input onChange={this.setFirstname} />
+            <input onChange={this.setfirstName} />
 
 
           </div>
@@ -104,6 +104,10 @@ class ParentAdd extends Component {
             <input onChange={this.setSex} type="text" />
           </div>
 
+          <div> <label>Tel:</label>
+            <input onChange={this.setTel} type="text" />
+          </div>
+
           <div> <label>Email: </label>
             <input onChange={this.setEmail} type="text"  />
           </div>
@@ -115,7 +119,7 @@ class ParentAdd extends Component {
           
         </div>
         <div className="center_button">
-        <Link  class="btn btn-primary" to="/inscription/ParentList" onClick={this.addyParent}><i class="fas fa-save"> Save</i></Link>
+        <Link  class="btn btn-primary" to="/inscription/ParentsList" onClick={this.addParent}><i class="fas fa-save"> Save</i></Link>
         </div>
         </div>
       </div>
