@@ -7,7 +7,9 @@ email: String,
 adress: String,
 tel:String,
 sex:String,
-babies: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Baby' }],
+babies:Array
+// babies: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Baby' }],
+
 }, );
 
 module.exports = mongoose.model('Parent', ParentSchema);

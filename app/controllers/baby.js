@@ -39,7 +39,7 @@ exports.create = (req, res) => {
         // Save baby in the database
         baby.save()
             .then(babyDoc => {
-                parentCtr.addBaby(req.body.parentId, babyDoc._id)
+                parentCtr.addBaby(req.body.parentId, babyDoc)
                     .then((parentDoc) => res.send(parentDoc))
                     .catch(err => {
                         res.status(500).send({

@@ -1,11 +1,11 @@
 const Parent = require('../models/parent.js');
 const babyCtr = require('./baby');
 
-exports.addBaby =(parentId,babyId)=>{
-   return Parent.findByIdAndUpdate(parentId,{
-       babies:[babyId]
-   }, { new: true }).exec()
-}
+exports.addBaby =(parentId,baby)=>{
+    return Parent.findByIdAndUpdate(parentId,{
+      $push: {  babies: baby }   
+    }, { new: true }).exec()
+ }
 
 // Create and Save a new Parent
 exports.create = (req, res) => {
@@ -19,7 +19,7 @@ exports.create = (req, res) => {
 
     //many things to wait   ==> await
 
-    const babyPromise = babyCtr.fetch(req.body.babyName)
+    // const babyPromise = babyCtr.fetch(req.body.babyName)
     // Create a Parent
 
 
@@ -55,14 +55,10 @@ exports.create = (req, res) => {
 // Retrieve and return all parents from the database.
 exports.findAll = (req, res) => {
     Parent.find()
-        .populate('baby', 'name')
         .then(parents => {
             res.send(parents.map(parent => {
                 parentObj = parent.toObject()
-                if (parentObj.baby) {
-                    parentObj.babyName = parentObj.baby.name
-                    delete parentObj.baby
-                }
+
                 return parentObj
             }));
         }).catch(err => {

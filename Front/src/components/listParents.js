@@ -49,6 +49,7 @@ class ParentList extends Component {
                                           <div className="card-body text-center">
                                               <p><img className=" img-fluid" src={defaultImgUrl} alt="card image" /></p>
                                               <h4 className="card-title">{el.firstName} {el.lastName}</h4>
+                                                <div>{el.babies.map((baby) => {return(<h5 className="card-title"> {baby.firstName}</h5>)})}</div>
                                               <p className="card-text"><strong>{el.firstName}'s email:</strong> {el.email}.</p>
                                           </div>
                                           <div className= "center_button">
