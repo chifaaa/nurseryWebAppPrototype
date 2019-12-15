@@ -65,6 +65,9 @@ class ParentList extends Component {
                                               <p className="card-text"><strong>Adress:</strong> {el.adress}</p>
                                               <p className="card-text"><strong>Tel:</strong> {el.tel}</p>
                                               <p className="card-text"><strong>Email:</strong> {el.email}</p>
+                                                  {el.babies.map(baby => {
+                                              return (<p className="card-text"><strong>Baby Name:</strong> {baby.firstName} {baby.lastName}</p>)
+                                              })}
                                               <ul className="list-inline">
                                               </ul>
                                           </div>
