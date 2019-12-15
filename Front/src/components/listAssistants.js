@@ -30,32 +30,93 @@ class AssistantList extends Component {
   render() {
     return (
 
-      <div className="container_list">
-        {this.state.assistants.map((el, i) => {
-          return (
-            <div className="elmt" key={i} >
+<section id="team" className="pb-5">
+      <div className="container">
+          <h5 className="section-title h1">Maternal Assistant's List</h5>
+          <div className="row">
+              {this.state.assistants.map((el, i) => {
+                
 
-              <p><span>firstName :</span>{el.firstName}</p>
-              <p> <span>lastName :</span>{el.lastName}</p>
+                  return (
+                      <div className="col-xs-12 col-sm-6 col-md-4">
+                          <div className="image-flip" ontouchstart="this.classList.toggle('hover');">
+                              <div className="mainflip">
+                                  <div className="frontside">
+                                      <div className="card">
+                                          <div className="card-body text-center">
+                                              <p><img className=" img-fluid" src={'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Crystal_Clear_kdm_user_female.svg/1024px-Crystal_Clear_kdm_user_female.svg.png'} alt="card image" /></p>
+                                              <h4 className="card-title">{el.firstName} {el.lastName}</h4>
+                                              
+                                              <p className="card-text"><strong> email:</strong> {el.email}.</p>
+                                          </div>
+                                          <div className= "center_button">
+                                              <a href="#" className="btn btn-primary"><i className="fas fa-eye">View</i></a>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div className="backside">
+                                      <div className="card">
+                                          <div className="card-body text-center mt-4">
+                                              <h4 className="card-title">{el.firstName} {el.lastName}</h4>
+                                              
+                                              <p className="card-text"><strong>Sex:</strong> {el.sex}</p>
+                                              <p className="card-text"><strong>Adress:</strong> {el.adress}</p>
+                                              <p className="card-text"><strong>Tel:</strong> {el.tel}</p>
+                                              <p className="card-text"><strong>Email:</strong> {el.email}</p>
+                                                  
+                                              <ul className="list-inline">
+                                              </ul>
+                                          </div>
+                                          <div className= "center_button">
+                                              <a href="#" class="btn btn-primary  btn-delete"> <i class="fas fa-trash" > <span onClick={() => { this.delete(el._id) }} >Delete</span></i></a>
+                                              <Link class="btn btn-primary" to={`/modifyAssistant/${el._id}/${el.firstName}/${el.lastName}/${el.tel}/${el.email}/${el.adress}/${el.sex}`}><i class="fas fa-edit"> Edit</i></Link>
 
-              <p><span>tel:</span>{el.tel}</p>
-              <p><span>email:</span>{el.email}</p>
-              <p><span>adress:</span>{el.adress}</p>
+                                          </div>
 
-              <button ><span onClick={() => { this.delete(el._id) }}>Supprimer</span></button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  )
+              })}
 
-              <button ><Link to={`/modifyassistant/${el._id}/${el.firstName}/${el.lastName}/${el.tel}/${el.email}/${el.adress}`}><span>Modifier</span></Link></button>
-
-            </div>
-          )
-        })}
+          </div>
       </div>
+  </section>
 
 
 
 
-    );
-  }
+
+);
 }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+      
 
 export default AssistantList;

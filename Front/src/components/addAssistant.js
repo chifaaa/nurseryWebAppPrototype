@@ -52,52 +52,76 @@ else { alert('Required fields!! Name and tel and email and adress') }
        render() { 
 
         return ( 
+          <section id="team" className="pb-5">
 
+          <div className="col-xs-12 col-sm-6 col-md-4">
+          <div className="edit">
+            <div className="frontside">
+              <div className="card">
+          
+                <div className="card-body">
+                  <h4 className="card-title"> Add assistant</h4>
+          
+                  <div>
+                    <div> <label >First name :</label>
+          
+                      <input onChange={this.setfirstName} />
+          
+          
+                    </div>
+          
+          
+          
+                    <div> <label>Last name :</label>
+          
+                      <input onChange={this.setLastname} type="text" />
+          
+                    </div>
+          
+          
+                   
+          
+                    <div> <label>Tel:</label>
+                      <input onChange={this.setTel} type="text" />
+                    </div>
+          
+                    <div> <label>Email: </label>
+                      <input onChange={this.setEmail} type="text"  />
+                    </div>
+          
+                    <div> <label>Adress: </label>
+                      <input onChange={this.setAdress} type="text" />
+                    </div>
+                    
+                    
+                  </div>
+                  <div className="center_button">
+                  <Link  class="btn btn-primary" to="/inscription/AssistantsList" onClick={this.addAssistant}><i class="fas fa-save"> Save</i></Link>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </section>
+          
+          
+          
+          )
+          }
+          };
+          
+          
+          
+          
+          
+          
+
+
+
+
+          //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
        
-           <form >
-        <h2>
-          ADD assistant
-        </h2>
-        <br/>
-        <br/>
-        <span className="subtitle">FIRSTNAME:</span>
-        <br/>
-        <input type="text" onChange={this.setName}  />
-        <br/>
-        <span className="subtitle">LASTNAME:</span>
-        <br/>
-        <input type="text" onChange={this.setLastname}  />
-        <br/>
-        <br/>
-        <span className="subtitle">TEL:</span>
-        <br/>
-        <input type="text" onChange={this.setTel}  />
-        <br/>
-        <span className="subtitle"> EMAIL:</span>
-        <br/>
-        <input type="text" onChange={this.setEmail}  />
-        <br/>
-        <span className="subtitle">ADRESS:</span>
-        <br/>
-        <input type="text" onChange={this.setAdress}  />
-        <br/>
-   
-        <br/>
-       
-  
-        <br/>
-  
-             
-        <Link to="/inscription/AssistantsList"> <span onClick={this.addAssistant} >Submit</span> </Link> 
-  
-
-     </form>    
-
- 
-
-      
-      );
-    }
-}
+          
  
 export default AssistantAdd ;
