@@ -1,17 +1,17 @@
 const Parent = require('../models/parent.js');
 const babyCtr = require('./baby');
 
-exports.addBaby =(parentId,babyId)=>{
-   return Parent.findByIdAndUpdate(parentId,{
-     $push: {  babies: babyId }   
-   }, { new: true }).exec()
+exports.addBaby = (parentId, babyId) => {
+    return Parent.findByIdAndUpdate(parentId, {
+        $push: { babies: babyId }
+    }, { new: true }).exec()
 }
 
 // Create and Save a new Parent
 exports.create = (req, res) => {
     console.log("parent create was called")
     // Validate request
-    if (!(req.body.firstName && req.body.lastName && req.body.tel && req.body.email && req.body.adress&& req.body.sex)) {
+    if (!(req.body.firstName && req.body.lastName && req.body.tel && req.body.email && req.body.adress && req.body.sex)) {
         return res.status(400).send({
             message: "Parent's firstname and lastname and tel and adress and email and sex can not be empty"
         });
@@ -25,7 +25,7 @@ exports.create = (req, res) => {
         lastName: req.body.lastName,
         email: req.body.email,
         adress: req.body.adress,
-        sex:req.body.sex,
+        sex: req.body.sex,
 
         tel: req.body.tel
     });
@@ -52,16 +52,9 @@ exports.create = (req, res) => {
 // Retrieve and return all parents from the database.
 exports.findAll = (req, res) => {
     Parent.find()
-        .populate('baby', 'name')
+        .populate('babies')
         .then(parents => {
-            res.send(parents.map(parent => {
-                parentObj = parent.toObject()
-                if (parentObj.baby) {
-                    parentObj.babyName = parentObj.baby.name
-                    delete parentObj.baby
-                }
-                return parentObj
-            }));
+            res.send(parents);
         }).catch(err => {
             res.status(500).send({
                 message: err.message || "Some error occurred while retrieving parents."
@@ -72,6 +65,8 @@ exports.findAll = (req, res) => {
 // Find a single Parent with a ParentId
 exports.findOne = (req, res) => {
     Parent.findById(req.params.parentId)
+    .populate('babies')
+    
         .then(parent => {
             if (!parent) {
                 return res.status(404).send({
@@ -94,7 +89,7 @@ exports.findOne = (req, res) => {
 // Update a Parent identified by the ParentId in the request
 exports.update = (req, res) => {
     // Validate Request
-    if (!(req.body.firstName && req.body.lastName && req.body.tel && req.body.email&& req.body.adress&& req.body.sex)) {
+    if (!(req.body.firstName && req.body.lastName && req.body.tel && req.body.email && req.body.adress && req.body.sex)) {
         return res.status(400).send({
             message: "Parent's firstname and lastname and  tel and adress and email can not be empty"
         });
