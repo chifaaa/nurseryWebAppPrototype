@@ -49,7 +49,10 @@ class ParentList extends Component {
                                           <div className="card-body text-center">
                                               <p><img className=" img-fluid" src={defaultImgUrl} alt="card image" /></p>
                                               <h4 className="card-title">{el.firstName} {el.lastName}</h4>
-                                              <p className="card-text"><strong>{el.firstName}'s email:</strong> {el.email}.</p>
+                                              {el.babies.map(baby => {
+                                              return (<p className="card-text"><strong>Baby Name:</strong> {baby.firstName} {baby.lastName}</p>)
+                                              })}
+                                              <p className="card-text"><strong> email:</strong> {el.email}.</p>
                                           </div>
                                           <div className= "center_button">
                                               <a href="#" className="btn btn-primary"><i className="fas fa-eye">View</i></a>
@@ -65,9 +68,7 @@ class ParentList extends Component {
                                               <p className="card-text"><strong>Adress:</strong> {el.adress}</p>
                                               <p className="card-text"><strong>Tel:</strong> {el.tel}</p>
                                               <p className="card-text"><strong>Email:</strong> {el.email}</p>
-                                                  {el.babies.map(baby => {
-                                              return (<p className="card-text"><strong>Baby Name:</strong> {baby.firstName} {baby.lastName}</p>)
-                                              })}
+                                                  
                                               <ul className="list-inline">
                                               </ul>
                                           </div>

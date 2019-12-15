@@ -50,43 +50,80 @@ tel:this.props.match.params.tel,
        
 
 return (
-    
-    
-<div>
- 
-<div> <label> firstName :</label>
 
-<input value={this.state.firstName} type="text"onChange={(e)=>{this.setState({firstName:e.target.value})}}/>
+<section id="team" className="pb-5">
 
+<div className="col-xs-12 col-sm-6 col-md-4">
+<div className="edit">
+  <div className="frontside">
+    <div className="card">
+
+      <div className="card-body">
+        <h4 className="card-title">{this.state.firstName} {this.state.lastName}</h4>
+
+        <div>
+          <div> <label >First name :</label>
+
+            <input value={this.state.firstName} type="text" onChange={(e) => { this.setState({ firstName: e.target.value }) }} />
+
+
+          </div>
+
+
+
+          <div> <label>Last name :</label>
+
+            <input value={this.state.lastName} type="text" onChange={(e) => { this.setState({ lastName: e.target.value }) }} />
+
+          </div>
+
+
+         
+
+          <div> <label>Email: </label>
+            <input value={this.state.email} type="text" onChange={(e) => { this.setState({ email: e.target.value }) }} />
+          </div>
+
+          <div> <label>Adress: </label>
+            <input value={this.state.adress} type="text" onChange={(e) => { this.setState({ adress: e.target.value }) }} />
+          </div>
+          
+          
+        </div>
+        <div className="center_button">
+        <Link  class="btn btn-primary" to="/inscription/AssistantsList" onClick={this.modifyAssistant}><i class="fas fa-save"> Save</i></Link>
+       
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+</section>
 
 
-<div> <label>lastName :</label>
 
-<input value={this.state.lastName} type="text"onChange={(e)=>{this.setState({lastName:e.target.value})}}/>
-
-</div>
-
-<div> <label>tel :</label>
-<input value={this.state.tel} type="text" onChange={(e)=>{this.setState({tel:e.target.value})}}/>
-</div>
-
-<div> <label>email :</label>
-<input value={this.state.email} type="text" onChange={(e)=>{this.setState({sex:e.target.value})}}/>
-</div>
-
-<div> <label>adress :</label>
-<input value={this.state.adress} type="text" onChange={(e)=>{this.setState({adress:e.target.value})}}/>
-</div>
-<Link to="/inscription/AssistantsList"> <p onClick={this.modifyAssistant}>Modifier</p>
-</Link> 
-<Link to={`/inscription/BabyNew/${this.state.id}`}><span>Add Baby</span></Link>
-</div>
-    
-);
-
-      
-    }
+)
 }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+
  
 export default ModifyAssistant;
