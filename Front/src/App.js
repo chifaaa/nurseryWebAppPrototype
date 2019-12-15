@@ -12,6 +12,9 @@ import modifyBaby from './components/modifyBaby'
 import ParentAdd from './components/addParent'
 import ParentList from './components/listParents'
 import ModifyParent from './components/modifyParent'
+import AssistantAdd from './components/addAssistant'
+import AssistantList from './components/listAssistants'
+import ModifyAssistant from './components/modifyAssistant'
 
 
 function App() {
@@ -59,6 +62,10 @@ function App() {
       <Route path="/inscription/ParentNew" component={ParentAdd}/>
       <Route path="/inscription/ParentsList" component={ParentList}/>
       <Route  path="/modifyparent/:id/:firstName/:lastName/:tel/:email/:adress"  component={ModifyParent}/>
+
+      <Route path="/inscription/AssistantNew" component={AssistantAdd}/>
+      <Route path="/inscription/AssistantsList" component={AssistantList}/>
+      <Route  path="/modifyassistant/:id/:firstName/:lastName/:tel/:email/:adress"  component={ModifyAssistant}/>
 
     </Router>
 

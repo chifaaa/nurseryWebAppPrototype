@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 
-var counter = 0;
 class Inscription extends Component {
   render() { 
     return ( 
@@ -17,12 +16,15 @@ class Inscription extends Component {
       <p className="plink">  <Link to="/inscription/ParentsList"><span>Parents list</span></Link>
       <Link to="/inscription/ParentNew"><span>Add Parent</span></Link>
         </p>
-      </div>
+      
      
  
-    
- {/* <Route path="/BabyList"    render={(props) => (
-  <BabyList key={(++counter).toString()}  a={++counter} {...props} />)   */}
+      <h1>Assistants </h1>
+      <p className="plink">  <Link to="/inscription/AssistantsList"><span>Assistants list</span></Link>
+      <Link to="/inscription/AssistantNew"><span>Add Assistant</span></Link>
+        </p>
+      
+        </div>
 
 
  </div>
