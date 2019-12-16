@@ -98,13 +98,7 @@ exports.update = (req, res) => {
             message: "Parent's firstname and lastname and  tel and adress and email can not be empty"
         });
     }
-    babyCtr.fetch(req.body.babyName).then(babyDoc => {
-        if (!babyDoc) {
-            return res.status(400).send({
-                message: "this babyName  not exist"
-            });
 
-        }
         // Find Parent and update it with the request body
         Parent.findByIdAndUpdate(req.params.parentId, {
             firstName: req.body.firstName,
@@ -133,7 +127,7 @@ exports.update = (req, res) => {
                     message: "Error updating Parent with id " + req.params.parentId
                 });
             });
-    });
+    
 };
 
 // Delete a Parent with the specified noteId in the request

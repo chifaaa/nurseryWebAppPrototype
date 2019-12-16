@@ -10,13 +10,12 @@ class ParentAdd extends Component {
       tel: '',
       email: '',
       adress: '',
-
+      sex:''
     })
   }
 
 
   setfirstName = e => {
-
     this.setState({
       firstName: e.target.value
 

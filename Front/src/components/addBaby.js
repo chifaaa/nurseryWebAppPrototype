@@ -5,11 +5,11 @@ class BabyAdd extends Component {
   constructor(props){
     super(props)
     this.state=({
-        firstName:'',
-        lasttName:'',
-      birthdate:'',
-      sex:'',
-      groupName:''
+    firstName:'',
+    lasttName:'',
+    birthdate:'',
+    sex:'',
+    groupName:''
     })
   }
 
@@ -39,7 +39,7 @@ class BabyAdd extends Component {
   })}
 
   addBaby = () => {
-    if (this.state.firstName !== '' && (this.state.lastName !== '' || this.state.birthdate !== ''|| this.state.sex !== ''||this.state.groupName !== '')) {
+    if (this.state.firstName !== '' && (this.state.lastName !== '' || this.state.birthdate !== ''|| this.state.sex !== '')) {
     axios.post("http://localhost:3000/baby/create",{
      firstName:this.state.firstName,lastName:this.state.lastName,birthdate:this.state.birthdate,sex:this.state.sex,groupName:this.state.groupName,parentId:this.props.match.params.parentId
     })

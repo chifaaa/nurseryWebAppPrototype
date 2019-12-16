@@ -3,9 +3,9 @@ const groupCtr = require('./group.js');
 const parentCtr = require('./parent.js');
 
 
-exports.fetch = (name) => {
-    return Baby.findOne({ name }).exec()
-}
+// exports.fetch = (name) => {
+//     return Baby.findOne({ name }).exec()
+// }
 // Create and Save a new Baby
 exports.create = (req, res) => {
     // Validate request
@@ -38,21 +38,21 @@ exports.create = (req, res) => {
 
         // Save baby in the database
         baby.save()
-            .then(babyDoc => {
-                parentCtr.addBaby(req.body.parentId, babyDoc)
-                    .then((parentDoc) => res.send(parentDoc))
-                    .catch(err => {
-                        res.status(500).send({
-                            message: err.message || "Some error occurred while updating parent."
-                        });
+        .then(babyDoc => {
+            parentCtr.addBaby(req.body.parentId, babyDoc)
+                .then((parentDoc) => res.send(parentDoc))
+                .catch(err => {
+                    res.status(500).send({
+                        message: err.message || "Some error occurred while updating parent."
                     });
-            }).catch(err => {
-                res.status(500).send({
-                    message: err.message || "Some error occurred while saving the baby."
                 });
+        }).catch(err => {
+            res.status(500).send({
+                message: err.message || "Some error occurred while saving the baby."
             });
-    }
-    )
+        });
+}
+)
 
 
 
