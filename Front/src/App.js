@@ -16,6 +16,11 @@ import AssistantAdd from './components/addAssistant'
 import AssistantList from './components/listAssistants'
 import ModifyAssistant from './components/modifyAssistant'
 
+import GroupList from './components/listGroups'
+import ModifyGroup from './components/modifyGroup'
+import GroupAdd from './components/addGroup';
+
+
 
 function App() {
   return (
@@ -66,6 +71,12 @@ function App() {
       <Route path="/inscription/AssistantNew" component={AssistantAdd}/>
       <Route path="/inscription/AssistantsList" component={AssistantList}/>
       <Route  path="/modifyassistant/:id/:firstName/:lastName/:tel/:email/:adress"  component={ModifyAssistant}/>
+
+
+      <Route path="/inscription/GroupNew" component={GroupAdd}/>
+      <Route path="/inscription/groupsList" component={GroupList}/>
+      <Route  path="/modifygroup/:id/:groupName"  component={ModifyGroup}/>
+
 
     </Router>
 

@@ -65,7 +65,7 @@ else { alert('Required fields!! Name and tel and email and adress') }
                   <div>
                     <div> <label >First name :</label>
           
-                      <input onChange={this.setfirstName} />
+                      <input onChange={this.setName} />
           
           
                     </div>

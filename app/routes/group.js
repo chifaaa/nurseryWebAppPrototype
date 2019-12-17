@@ -4,15 +4,16 @@ module.exports = (app) => {
     // Create a new Group
     app.post('/create/group', groupCtr.create);
 
-    // // Retrieve all Notes
-    // app.get('/notes', notes.findAll);
+     //  Retrieve all groups
+     app.get('/groups', groupCtr.findAll);
 
-    // // Retrieve a single Note with noteId
-    // app.get('/notes/:noteId', notes.findOne);
+    // //  Retrieve a single parent with parentId
+    //  app.get('/group/:groupId', groupCtr.findOne);
 
-    // // Update a Note with noteId
-    // app.put('/notes/:noteId', notes.update);
+    //  Update a parent with parentId
+     app.put('/group/update/:groupId', groupCtr.update);
 
-    // // Delete a Note with noteId
-    // app.delete('/notes/:noteId', notes.delete);
+    //  Delete a parent with parentId
+     app.delete('/group/delete/:groupId', groupCtr.delete);
+
 }
