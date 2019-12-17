@@ -4,6 +4,12 @@ exports.fetch = (groupName)=> {
     return Group.findOne({groupName}).exec()
 }
 
+
+exports.addBabyToGroup = (groupId, babyId) => {
+    return Group.findByIdAndUpdate(groupId, {
+        $push: { babies: babyId }
+    }, { new: true }).exec()
+}
 // Create and Save a new Note
 exports.create = (req, res) => {
     console.log('req', req)

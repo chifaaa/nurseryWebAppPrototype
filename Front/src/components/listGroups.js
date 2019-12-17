@@ -60,7 +60,9 @@ class GroupList extends Component {
                                       <div className="card">
                                           <div className="card-body text-center mt-4">
                                               <h4 className="card-title">{el.groupName}</h4>
-                                              
+                                              {el.babies.map(baby => {
+                                              return (<p className="card-text"><strong>Baby Name:</strong> {baby.firstName} {baby.lastName}</p>)
+                                              })}
                                             
                                               <ul className="list-inline">
                                               </ul>

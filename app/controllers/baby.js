@@ -46,6 +46,15 @@ exports.create = (req, res) => {
                             message: err.message || "Some error occurred while updating parent."
                         });
                     });
+
+                groupCtr.addBabyToGroup(babyDoc.group, babyDoc._id)
+                .then((groupDoc) => res.send(groupDoc))
+                .catch(err => {
+                    res.status(500).send({
+                        message: err.message || "Some error occurred while updating group."
+                    });
+                });  
+
             }).catch(err => {
                 res.status(500).send({
                     message: err.message || "Some error occurred while saving the baby."
