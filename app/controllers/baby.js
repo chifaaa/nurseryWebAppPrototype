@@ -3,9 +3,9 @@ const groupCtr = require('./group.js');
 const parentCtr = require('./parent.js');
 
 
-exports.fetch = (name) => {
-    return Baby.findOne({ name }).exec()
-}
+// exports.fetch = (name) => {
+//     return Baby.findOne({ name }).exec()
+// }
 // Create and Save a new Baby
 exports.create = (req, res) => {
     // Validate request
@@ -46,6 +46,15 @@ exports.create = (req, res) => {
                             message: err.message || "Some error occurred while updating parent."
                         });
                     });
+
+                groupCtr.addBabyToGroup(babyDoc.group, babyDoc._id)
+                .then((groupDoc) => res.send(groupDoc))
+                .catch(err => {
+                    res.status(500).send({
+                        message: err.message || "Some error occurred while updating group."
+                    });
+                });  
+
             }).catch(err => {
                 res.status(500).send({
                     message: err.message || "Some error occurred while saving the baby."
@@ -63,12 +72,12 @@ exports.create = (req, res) => {
 // Retrieve and return all babies from the database.
 exports.findAll = (req, res) => {
     Baby.find()
-        .populate('group', 'name')
+        .populate('group')
         .then(babies => {
             res.send(babies.map(baby => {
                 babyObj = baby.toObject()
                 if (babyObj.group) {
-                    babyObj.groupName = babyObj.group.name
+                    babyObj.groupName = babyObj.group.groupName
                     delete babyObj.group
                 }
                 return babyObj

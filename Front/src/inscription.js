@@ -24,7 +24,14 @@ class Inscription extends Component {
       <Link to="/inscription/AssistantNew"><span>Add Assistant</span></Link>
         </p>
       
+
+        <h1>Groups </h1>
+      <p className="plink">  <Link to="/inscription/groupsList"><span>Groups list</span></Link>
+      <Link to="/inscription/GroupNew"><span>Add A New Group</span></Link>
+        </p>
         </div>
+
+
 
 
  </div>
