@@ -47,7 +47,7 @@ class AssistantList extends Component {
                                               <p><img className=" img-fluid" src={'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Crystal_Clear_kdm_user_female.svg/1024px-Crystal_Clear_kdm_user_female.svg.png'} alt="card image" /></p>
                                               <h4 className="card-title">{el.firstName} {el.lastName}</h4>
                                               
-                                              <p className="card-text"><strong> email:</strong> {el.email}.</p>
+                                              <p className="card-text"><strong> is responsible for group :</strong> {el.groupName}</p>
                                           </div>
                                           <div className= "center_button">
                                               <a href="#" className="btn btn-primary"><i className="fas fa-eye">View</i></a>
@@ -63,13 +63,14 @@ class AssistantList extends Component {
                                               <p className="card-text"><strong>Adress:</strong> {el.adress}</p>
                                               <p className="card-text"><strong>Tel:</strong> {el.tel}</p>
                                               <p className="card-text"><strong>Email:</strong> {el.email}</p>
+                                              <p className="card-text"><strong>Group Name:</strong> {el.groupName}</p>
                                                   
                                               <ul className="list-inline">
                                               </ul>
                                           </div>
                                           <div className= "center_button">
                                               <a href="#" class="btn btn-primary  btn-delete"> <i class="fas fa-trash" > <span onClick={() => { this.delete(el._id) }} >Delete</span></i></a>
-                                              <Link class="btn btn-primary" to={`/modifyAssistant/${el._id}/${el.firstName}/${el.lastName}/${el.tel}/${el.email}/${el.adress}/${el.sex}`}><i class="fas fa-edit"> Edit</i></Link>
+                                              <Link class="btn btn-primary" to={`/modifyAssistant/${el._id}/${el.firstName}/${el.lastName}/${el.tel}/${el.email}/${el.adress}/${el.groupName}`}><i class="fas fa-edit"> Edit</i></Link>
 
                                           </div>
 

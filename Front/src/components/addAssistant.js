@@ -6,11 +6,11 @@ class AssistantAdd extends Component {
     super(props)
     this.state=({
         firstName:'',
-        lasttName:'',
+        lastName:'',
       tel:'',
       email:'',
       adress:'',
-     
+     groupName:''
     })
   }
 
@@ -38,15 +38,20 @@ class AssistantAdd extends Component {
     
   })}
 
+  setGroupName=e=> {  this.setState({
+    groupName:e.target.value
+    
+  })}
+
   addAssistant = () => {
-    if (this.state.firstName !== '' && (this.state.lastName !== '' || this.state.tel !== ''|| this.state.adress !== ''||this.state.email !== '')) {
+    if (this.state.firstName !== '' && (this.state.lastName !== '' || this.state.tel !== ''|| this.state.adress !== ''||this.state.email !== ''||this.state.groupName !== '')) {
     axios.post("http://localhost:3000/assistant/create",{
-     firstName:this.state.firstName,lastName:this.state.lastName,tel:this.state.tel,email:this.state.email,adress:this.state.adress
+     firstName:this.state.firstName,lastName:this.state.lastName,tel:this.state.tel,email:this.state.email,adress:this.state.adress,groupName:this.state.groupName
     })
  
   }
 
-else { alert('Required fields!! Name and tel and email and adress') }
+else { alert('Required fields!! Name and tel and email and adress and groupName') }
 }
 
        render() { 
@@ -93,6 +98,10 @@ else { alert('Required fields!! Name and tel and email and adress') }
                       <input onChange={this.setAdress} type="text" />
                     </div>
                     
+
+                    <div> <label>Group Name: </label>
+                      <input onChange={this.setGroupName} type="text" />
+                    </div>
                     
                   </div>
                   <div className="center_button">
