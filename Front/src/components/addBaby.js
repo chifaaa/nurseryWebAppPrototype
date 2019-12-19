@@ -97,7 +97,7 @@ else { alert('Required fields!! Name and tel and email and birthdate') }
                     
                   </div>
                   <div className="center_button">
-                  <Link  class="btn btn-primary" to="/inscription/BabyList" onClick={this.addBaby}><i class="fas fa-save"> Save</i></Link>
+                  <Link  class="btn btn-primary" to="/babiesListPage" onClick={this.addBaby}><i class="fas fa-save"> Save</i></Link>
                   </div>
                   </div>
                 </div>

@@ -5,7 +5,12 @@ import './App.css';
 import { Features } from './components/features';
 import stork from './cigue.png'
 import { BrowserRouter as Router, Route,Switch,Link } from 'react-router-dom';
-import Inscription from './inscription';
+import AssistantsPage from './assistantsPage';
+import ParentsPage from './parentsPage';
+import BabiesPage from './babiesListPage';
+import GroupsPage from './groupsPage';
+import HomePage from './homePage';
+
 import BabyAdd from './components/addBaby'
 import BabyList from './components/listBabies'
 import modifyBaby from './components/modifyBaby'
@@ -21,61 +26,32 @@ import ModifyGroup from './components/modifyGroup'
 import GroupAdd from './components/addGroup';
 
 
-
 function App() {
   return (
     
     <Router>
        
-         <Route exact path ={'/'} render ={()=> 
-         <div>
-            <div className="App">
-     <div className='logoandnav'>
-       <img className='logo' src={stork}/> 
-       <div className='logotextcontainer'><p className='logotext'>Baby<br/>Storks</p></div>
-       
-       
-     <div className='navcontainer'><Navb/></div>
-     </div>
-     <Car/>
-     {/* <div className="diva" style={{backgroundColor:'black'}}>here</div> */}
-     <Features/>
-     <footer>
-    <p>
-        Follow Us On: 
-        
-        <span className="country-link">Facebook</span>, 
-        <span className="country-link">YouTube</span>, 
-        <span className="country-link">Instagram</span> and 
-        <span className="country-link">Twitter</span> <br/><br/>
-        This site uses cookies to deliver services in accordance with this Privacy Policy. You can specify the
-        conditions for storing or accessing cookies on your browser.<br/>
-        www.babystorks.com © 2019
-    </p>
-    </footer> 
-
-  </div>
-         </div>
-
-         }/>
+      <Route exact path ={'/'} component ={HomePage}/>
       
-      <Route path="/inscription" component ={Inscription}/>
-      <Route path="/inscription/BabyNew/:parentId" component={BabyAdd}/>
-      <Route path="/inscription/BabyList" component={BabyList}/> 
-      <Route  path="/modifyBaby/:id/:firstName/:lastName/:birthdate/:sex/:groupName"  component={modifyBaby}/>
- 
-      <Route path="/inscription/ParentNew" component={ParentAdd}/>
-      <Route path="/inscription/ParentsList" component={ParentList}/>
-      <Route  path="/modifyparent/:id/:firstName/:lastName/:tel/:email/:adress"  component={ModifyParent}/>
+      <Route exact path="/babiesListPage" component ={BabiesPage}/>
+      <Route exact path="/babiesListPage/BabyNew/:parentId" component={BabyAdd}/>
+      {/* <Route exact path="/babiesListPage/BabyList" component={BabyList}/>  */}
+      <Route path="/modifyBaby/:id/:firstName/:lastName/:birthdate/:sex/:groupName"  component={modifyBaby}/>
+      
+      <Route exact path="/parentsPage" component ={ParentsPage}/>
+      <Route exact path="/parentsPage/ParentNew" component={ParentAdd}/>
+      <Route exact path="/parentsPage/ParentsList" component={ParentList}/>
+      <Route path="/modifyparent/:id/:firstName/:lastName/:tel/:email/:adress/:sex"  component={ModifyParent}/>
 
-      <Route path="/inscription/AssistantNew" component={AssistantAdd}/>
-      <Route path="/inscription/AssistantsList" component={AssistantList}/>
-      <Route  path="/modifyassistant/:id/:firstName/:lastName/:tel/:email/:adress"  component={ModifyAssistant}/>
+      <Route exact path="/assistantsPage" component ={AssistantsPage}/>
+      <Route exact path="/assistantsPage/AssistantNew" component={AssistantAdd}/>
+      <Route exact path="/assistantsPage/AssistantsList" component={AssistantList}/>
+      <Route path="/modifyassistant/:id/:firstName/:lastName/:tel/:email/:adress"  component={ModifyAssistant}/>
 
-
-      <Route path="/inscription/GroupNew" component={GroupAdd}/>
-      <Route path="/inscription/groupsList" component={GroupList}/>
-      <Route  path="/modifygroup/:id/:groupName"  component={ModifyGroup}/>
+      <Route exact path="/groupsPage" component ={GroupsPage}/>
+      <Route exact path="/groupsPage/GroupNew" component={GroupAdd}/>
+      <Route exact path="/groupsPage/groupsList" component={GroupList}/>
+      <Route path="/modifygroup/:id/:groupName"  component={ModifyGroup}/>
 
 
     </Router>

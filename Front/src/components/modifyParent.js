@@ -11,19 +11,21 @@ class ModifyParent extends Component {
          lastName:'',
          tel:'',
          email:'',
-         adress:'',     
+         adress:'',   
+         sex:''  
         })
           }
 
 
  componentDidMount() { 
-  this.setState({
-    id:this.props.match.params.id,
-    firstName:this.props.match.params.firstName,
+this.setState({
+id:this.props.match.params.id,
+firstName:this.props.match.params.firstName,
 lastName:this.props.match.params.lastName,
 email:this.props.match.params.email,
 adress:this.props.match.params.adress,
 tel:this.props.match.params.tel,
+sex:this.props.match.params.sex
  
    })
 
@@ -40,7 +42,6 @@ tel:this.props.match.params.tel,
       sex:this.state.sex,
       email:this.state.email,
       adress:this.state.adress,
-sex:this.state.sex
     }
     axios.put("http://localhost:3000/parent/update/"+this.state.id,x)
    
@@ -95,11 +96,14 @@ return (
               <input value={this.state.adress} type="text" onChange={(e) => { this.setState({ adress: e.target.value }) }} />
             </div>
             
-            
+            <div> <label>Tel: </label>
+              <input value={this.state.tel} type="text" onChange={(e) => { this.setState({ tel: e.target.value }) }} />
+            </div>
+
           </div>
           <div className="center_button">
-          <Link  class="btn btn-primary" to="/inscription/ParentList" onClick={this.modifyParent}><i class="fas fa-save"> Save</i></Link>
-          <Link  class="btn btn-primary" to={`/inscription/BabyNew/${this.state.id}`}><i class="fas fa-plus">Add Baby</i></Link>
+          <Link  class="btn btn-primary" to="/parentsPage/ParentsList" onClick={this.modifyParent}><i class="fas fa-save"> Save</i></Link>
+          <Link  class="btn btn-primary" to={`/babiesListPage/BabyNew/${this.state.id}`}><i class="fas fa-plus">Add Baby</i></Link>
           </div>
 
           </div>

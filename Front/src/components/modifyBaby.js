@@ -93,7 +93,7 @@ class ModifyBaby extends Component {
                   
                 </div>
                 <div className="center_button">
-                <Link  class="btn btn-primary" to="/inscription/BabyList" onClick={this.modifyBaby}><i class="fas fa-save"> Save</i></Link>
+                <Link  class="btn btn-primary" to="/babiesListPage" onClick={this.modifyBaby}><i class="fas fa-save"> Save</i></Link>
                 </div>
                 </div>
               </div>
