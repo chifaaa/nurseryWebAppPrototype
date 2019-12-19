@@ -5,7 +5,6 @@ import './App.css';
 import { Features } from './components/features';
 import stork from './cigue.png'
 import { BrowserRouter as Router, Route,Switch,Link } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
 
 
 function HomePage() {
@@ -20,9 +19,7 @@ function HomePage() {
      </div>
      <Car/>
      <Features/>
-     <Button variant="contained" color="primary">
-      Hello World
-    </Button>
+
 
      <footer>
     <p>
