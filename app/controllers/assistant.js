@@ -1,5 +1,7 @@
 const Assistant = require('../models/assistant.js');
 const babyCtr = require('./baby');
+const groupCtr = require('./group');
+
 
 exports.addBaby =(assistantId,babyId)=>{
    return Assistant.findByIdAndUpdate(assistantId,{
@@ -7,28 +9,42 @@ exports.addBaby =(assistantId,babyId)=>{
    }, { new: true }).exec()
 }
 
+
 // Create and Save a new Assistant
 exports.create = (req, res) => {
     console.log("assistant create was called")
     // Validate request
-    if (!(req.body.firstName && req.body.lastName && req.body.tel && req.body.email && req.body.adress)) {
+    if (!(req.body.firstName && req.body.lastName && req.body.tel && req.body.email && req.body.adress && req.body.groupName)) {
         return res.status(400).send({
-            message: "Assistant's firstname and lastname and tel and adress and email can not be empty"
+            message: "Assistant's firstname and lastname and tel and adress and email and groupName can not be empty"
         });
     }
 
     //many things to wait   ==> await
 
-    const babyPromise = babyCtr.fetch(req.body.babyName)
-    // Create a Assistant
+    // const babyPromise = babyCtr.fetch(req.body.babyName)
+    // Create an Assistant
+ 
+
+    const groupPromise = groupCtr.fetch(req.body.groupName)
+    // Create a Baby
+    groupPromise.then(groupDoc => {
+        if (!groupDoc) {
+            return res.status(400).send({
+                message: "this groupName  not exist"
+            });
+
+        }
+
+
 
     const assistant = new Assistant({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
         adress: req.body.adress,
-
-        tel: req.body.tel
+        tel: req.body.tel,
+        assistantGroup: groupDoc._id
     });
     // same thing for clubs
 
@@ -41,6 +57,7 @@ exports.create = (req, res) => {
                 message: err.message || "Some error occurred while creating the Assistant."
             });
         });
+    })
 }
 
 
@@ -50,15 +67,35 @@ exports.create = (req, res) => {
 
 
 // Retrieve and return all assistants from the database.
+// exports.findAll = (req, res) => {
+//     Assistant.find()
+//         .populate('baby', 'name')
+//         .then(assistants => {
+//             res.send(assistants.map(assistant => {
+//                 assistantObj = assistant.toObject()
+//                 if (assistantObj.baby) {
+//                     assistantObj.babyName = assistantObj.baby.name
+//                     delete assistantObj.baby
+//                 }
+//                 return assistantObj
+//             }));
+//         }).catch(err => {
+//             res.status(500).send({
+//                 message: err.message || "Some error occurred while retrieving assistants."
+//             });
+//         });
+// };
+
+
 exports.findAll = (req, res) => {
     Assistant.find()
-        .populate('baby', 'name')
+        .populate('assistantGroup')
         .then(assistants => {
             res.send(assistants.map(assistant => {
                 assistantObj = assistant.toObject()
-                if (assistantObj.baby) {
-                    assistantObj.babyName = assistantObj.baby.name
-                    delete assistantObj.baby
+                if (assistantObj.assistantGroup) {
+                    assistantObj.groupName = assistantObj.assistantGroup.groupName
+                    delete assistantObj.assistantGroup
                 }
                 return assistantObj
             }));
@@ -94,25 +131,27 @@ exports.findOne = (req, res) => {
 // Update a Assistant identified by the AssistantId in the request
 exports.update = (req, res) => {
     // Validate Request
-    if (!(req.body.firstName && req.body.lastName && req.body.tel && req.body.email&& req.body.adress)) {
+    if (!(req.body.firstName && req.body.lastName && req.body.tel && req.body.email&& req.body.adress  && req.body.groupName)) {
         return res.status(400).send({
-            message: "Assistant's firstname and lastname and  tel and adress and email can not be empty"
+            message: "Assistant's firstname and lastname and  tel and adress and email and groupName can not be empty"
         });
     }
-    babyCtr.fetch(req.body.babyName).then(babyDoc => {
-        if (!babyDoc) {
-            return res.status(400).send({
-                message: "this babyName  not exist"
-            });
+    // babyCtr.fetch(req.body.babyName).then(babyDoc => {
+    //     if (!babyDoc) {
+    //         return res.status(400).send({
+    //             message: "this babyName  not exist"
+    //         });
 
-        }
+    //     }
         // Find Assistant and update it with the request body
         Assistant.findByIdAndUpdate(req.params.assistantId, {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             tel: req.body.tel,
             email: req.body.email,
-            adress: req.body.adress
+            adress: req.body.adress,
+            groupName: req.body.groupName,
+            
 
         }, { new: true })
             .then(assistant => {
@@ -133,7 +172,7 @@ exports.update = (req, res) => {
                     message: "Error updating Assistant with id " + req.params.assistantId
                 });
             });
-    });
+    // });
 };
 
 // Delete a Assistant with the specified noteId in the request

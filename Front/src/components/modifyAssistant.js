@@ -11,7 +11,8 @@ class ModifyAssistant extends Component {
          lastName:'',
          tel:'',
          email:'',
-         adress:'',     
+         adress:'', 
+         groupName:''    
         })
           }
 
@@ -23,6 +24,7 @@ lastName:this.props.match.params.lastName,
 email:this.props.match.params.email,
 adress:this.props.match.params.adress,
 tel:this.props.match.params.tel,
+groupName:this.props.match.params.groupName
  
    })
 
@@ -36,7 +38,8 @@ tel:this.props.match.params.tel,
       lastName:this.state.lastName,
       tel:this.state.tel,
       email:this.state.email,
-      adress:this.state.adress
+      adress:this.state.adress,
+      groupName:this.state.groupName
     }
     axios.put("http://localhost:3000/assistant/update/"+this.state.id,x)
    
@@ -86,6 +89,10 @@ return (
 
           <div> <label>Adress: </label>
             <input value={this.state.adress} type="text" onChange={(e) => { this.setState({ adress: e.target.value }) }} />
+          </div>
+          
+          <div> <label>Adress: </label>
+            <input value={this.state.groupName} type="text" onChange={(e) => { this.setState({ groupName: e.target.value }) }} />
           </div>
           
           
