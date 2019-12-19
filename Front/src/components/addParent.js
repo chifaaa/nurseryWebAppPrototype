@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 class ParentAdd extends Component {
   constructor(props) {
     super(props)
@@ -71,7 +72,8 @@ class ParentAdd extends Component {
     return (
 
 
-     
+     <Router>
+       <Route path={"/addParent"} render={()=>
 
         <section id="team" className="pb-5">
 
@@ -119,7 +121,7 @@ class ParentAdd extends Component {
           
         </div>
         <div className="center_button">
-        <Link  class="btn btn-primary" to="/inscription/ParentsList" onClick={this.addParent}><i class="fas fa-save"> Save</i></Link>
+        <Link  class="btn btn-primary" to="/ParentsList" onClick={this.addParent}><i class="fas fa-save"> Save</i></Link>
         </div>
         </div>
       </div>
@@ -127,8 +129,8 @@ class ParentAdd extends Component {
   </div>
 </div>
 </section>
-
-
+}/>
+</Router>
 
 )
 }

@@ -59,7 +59,7 @@ class AssistantList extends Component {
                                           <div className="card-body text-center mt-4">
                                               <h4 className="card-title">{el.firstName} {el.lastName}</h4>
                                               
-                                              <p className="card-text"><strong>Sex:</strong> {el.sex}</p>
+                             
                                               <p className="card-text"><strong>Adress:</strong> {el.adress}</p>
                                               <p className="card-text"><strong>Tel:</strong> {el.tel}</p>
                                               <p className="card-text"><strong>Email:</strong> {el.email}</p>

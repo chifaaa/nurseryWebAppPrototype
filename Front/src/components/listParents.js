@@ -35,7 +35,7 @@ class ParentList extends Component {
 
       <section id="team" className="pb-5">
       <div className="container">
-          <h5 className="section-title h1">Parent's List'</h5>
+          <h5 className="section-title h1">Parents'List</h5>
           <div className="row">
               {this.state.parents.map((el, i) => {
                   const defaultImgUrl = el.sex == "male" ? "https://sophieriehl.com/wp-content/uploads/2017/06/male.png" : "http://www.victoire-avocats.eu/wp-content/uploads/2018/12/circled_user_female1600.png"

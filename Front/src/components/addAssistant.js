@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import {Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 class AssistantAdd extends Component {
   constructor(props){
     super(props)
@@ -52,6 +53,8 @@ else { alert('Required fields!! Name and tel and email and adress') }
        render() { 
 
         return ( 
+          <Router>
+            <Route path={'/addAssistant'} render={()=>
           <section id="team" className="pb-5">
 
           <div className="col-xs-12 col-sm-6 col-md-4">
@@ -65,7 +68,7 @@ else { alert('Required fields!! Name and tel and email and adress') }
                   <div>
                     <div> <label >First name :</label>
           
-                      <input onChange={this.setfirstName} />
+                      <input onChange={this.setName} />
           
           
                     </div>
@@ -96,7 +99,7 @@ else { alert('Required fields!! Name and tel and email and adress') }
                     
                   </div>
                   <div className="center_button">
-                  <Link  class="btn btn-primary" to="/inscription/AssistantsList" onClick={this.addAssistant}><i class="fas fa-save"> Save</i></Link>
+                  <Link  class="btn btn-primary" to="/AssistantsList" onClick={this.addAssistant}><i class="fas fa-save"> Save</i></Link>
                   </div>
                   </div>
                 </div>
@@ -104,8 +107,8 @@ else { alert('Required fields!! Name and tel and email and adress') }
             </div>
           </div>
           </section>
-          
-          
+          }/>
+          </Router>
           
           )
           }

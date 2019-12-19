@@ -20,18 +20,22 @@ import ModifyAssistant from './components/modifyAssistant'
 function App() {
   return (
     
-    <Router>
-       
-         <Route exact path ={'/'} render ={()=> 
-         <div>
-            <div className="App">
-     <div className='logoandnav'>
+    <div>
+            
+            <div className='logoandnav'>
        <img className='logo' src={stork}/> 
        <div className='logotextcontainer'><p className='logotext'>Baby<br/>Storks</p></div>
        
        
      <div className='navcontainer'><Navb/></div>
      </div>
+    <Router>
+      
+       
+         <Route exact path ={'/'} render ={()=> 
+         
+            <div className="App">
+     
      <Car/>
      {/* <div className="diva" style={{backgroundColor:'black'}}>here</div> */}
      <Features/>
@@ -50,25 +54,26 @@ function App() {
     </footer> 
 
   </div>
-         </div>
+        
 
          }/>
       
       <Route path="/inscription" component ={Inscription}/>
       <Route path="/inscription/BabyNew/:parentId" component={BabyAdd}/>
-      <Route path="/inscription/BabyList" component={BabyList}/> 
-      <Route  path="/modifyBaby/:id/:firstName/:lastName/:birthdate/:sex/:groupName"  component={modifyBaby}/>
+      <Route path="/BabyList" component={BabyList}/> 
+      <Route  path="/modifybaby/:id/:firstName/:lastName/:birthdate/:sex/:groupName"  component={modifyBaby}/>
  
-      <Route path="/inscription/ParentNew" component={ParentAdd}/>
-      <Route path="/inscription/ParentsList" component={ParentList}/>
+      <Route path="/addParent" component={ParentAdd}/>
+      <Route path="/ParentsList" component={ParentList}/>
       <Route  path="/modifyparent/:id/:firstName/:lastName/:tel/:email/:adress"  component={ModifyParent}/>
 
-      <Route path="/inscription/AssistantNew" component={AssistantAdd}/>
-      <Route path="/inscription/AssistantsList" component={AssistantList}/>
+      <Route path="/addAssistant" component={AssistantAdd}/>
+      <Route path="/AssistantsList" component={AssistantList}/>
       <Route  path="/modifyassistant/:id/:firstName/:lastName/:tel/:email/:adress"  component={ModifyAssistant}/>
 
     </Router>
-
+</div>
+  
   );
 }
 

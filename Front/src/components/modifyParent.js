@@ -98,8 +98,8 @@ return (
             
           </div>
           <div className="center_button">
-          <Link  class="btn btn-primary" to="/inscription/ParentList" onClick={this.modifyParent}><i class="fas fa-save"> Save</i></Link>
-          <Link  class="btn btn-primary" to={`/inscription/BabyNew/${this.state.id}`}><i class="fas fa-plus">Add Baby</i></Link>
+          <Link  class="btn btn-primary" to="/ParentsList" onClick={this.modifyParent}><i class="fas fa-save"> Save</i></Link>
+          <Link  class="btn btn-primary" to={`/addBaby${this.state.id}`}><i class="fas fa-plus">Add Baby</i></Link>
           </div>
 
           </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import {
   Collapse,
   Navbar,
@@ -11,7 +12,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from 'reactstrap';
-import {Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Navb = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,12 +21,14 @@ const Navb = (props) => {
 
   return (
     <div>
-      <Navbar  color="light" light expand="md">
+      <Navbar color="light" light expand="md">
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink>Home</NavLink>
+              <a href="/">
+                <NavLink>Home</NavLink>
+              </a>
             </NavItem>
 
             <UncontrolledDropdown nav inNavbar>
@@ -47,15 +50,40 @@ const Navb = (props) => {
               </DropdownMenu>
             </UncontrolledDropdown>
 
-            <NavItem>
-              <NavLink >Our Babies</NavLink>
-            </NavItem>
+<UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                Inscription
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem>
+                  <a href="/addParent">
+                  Add parent
+                  </a>
+                </DropdownItem>
+                <DropdownItem divider />
+                
+                <DropdownItem>
+                  <a href="/addAssistant">
+                  Add assistant
+                  </a>
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+
+
+
 
             <NavItem>
-            <Link to='/inscription'> 
-            <NavLink >Inscription</NavLink>
-            </Link>
+              <a href='/BabyList'>
+                <NavLink >Babies</NavLink>
+              </a>
             </NavItem>
+
+            {/* <NavItem>
+              <a href='/inscription'>
+                <NavLink >Inscription</NavLink>
+              </a>
+            </NavItem> */}
 
             <NavItem>
               <NavLink href="/components/">Contacts</NavLink>

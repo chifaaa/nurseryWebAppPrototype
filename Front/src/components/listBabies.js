@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 class BabyList extends Component {
     constructor(props) {
@@ -32,7 +33,8 @@ class BabyList extends Component {
 
     render() {
         return (
-
+            <Router>
+<Route path={"/BabyList"} render ={()=>
 
             <section id="team" className="pb-5">
                 <div className="container">
@@ -85,8 +87,8 @@ class BabyList extends Component {
                 </div>
             </section>
 
-
-
+                    }/>
+            </Router>
 
 
         );
