@@ -77,14 +77,15 @@ class ParentAdd extends Component {
 
 <div className="col-xs-12 col-sm-6 col-md-4">
 <div className="edit">
-  <div className="frontside">
-    <div className="card">
+  <div className="frontside" >
+    <div className="card" style={{height:'fit-content'}}>
 
       <div className="card-body">
         <h4 className="card-title"> Add parent</h4>
 
         <div>
           <div> <label >First name :</label>
+          
 
             <input onChange={this.setfirstName} />
 

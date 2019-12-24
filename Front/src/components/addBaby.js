@@ -60,7 +60,7 @@ else { alert('Required fields!! Name and tel and email and birthdate') }
           <div className="col-xs-12 col-sm-6 col-md-4">
           <div className="edit">
             <div className="frontside">
-              <div className="card">
+              <div className="card" style={{height:'fit-content'}}>
           
                 <div className="card-body">
                   <h4 className="card-title"> Add Baby</h4>

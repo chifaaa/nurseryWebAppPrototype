@@ -46,22 +46,28 @@ class GroupList extends Component {
                                   <div className="frontside">
                                       <div className="card">
                                           <div className="card-body text-center">
-                                              <h4 className="card-title">{el.groupName}</h4>
-                                              {/* {el.babies.map(baby => {
-                                              return (<p className="card-text"><strong>Baby Name:</strong> {baby.firstName} {baby.lastName}</p>)
-                                              })} */}
+                                              <h3 className="card-title">{el.groupName}</h3>
+                                              <strong> Assistants:</strong> 
+                                              <br/>
+                                              <br/>
+                                              {el.assistants.map(assistant => {
+                                              return (<p className="card-text">{assistant.firstName} {assistant.lastName}</p>)
+                                              })}
                                           </div>
                                           <div className= "center_button">
                                               <a href="#" className="btn btn-primary"><i className="fas fa-eye">View</i></a>
                                           </div>
                                       </div>
                                   </div>
-                                  <div className="backside">
-                                      <div className="card">
+                                  <div className="backside" style={{height:'fit-content'}}>
+                                      <div className="card" style={{height:'fit-content'}}>
                                           <div className="card-body text-center mt-4">
                                               <h4 className="card-title">{el.groupName}</h4>
+                                              <strong>Babies' Names:</strong>
+                                              <br/>
+                                              <br/>
                                               {el.babies.map(baby => {
-                                              return (<p className="card-text"><strong>Baby Name:</strong> {baby.firstName} {baby.lastName}</p>)
+                                              return (<p className="card-text"> {baby.firstName} {baby.lastName}</p>)
                                               })}
                                             
                                               <ul className="list-inline">
