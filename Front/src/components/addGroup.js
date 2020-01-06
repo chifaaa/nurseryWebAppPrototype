@@ -45,7 +45,7 @@ class GroupAdd extends Component {
 <div className="col-xs-12 col-sm-6 col-md-4">
 <div className="edit">
   <div className="frontside">
-    <div className="card">
+    <div className="card" style={{height:'fit-content'}}>
 
       <div className="card-body">
         <h4 className="card-title"> Add group</h4>
@@ -61,7 +61,7 @@ class GroupAdd extends Component {
           
         </div>
         <div className="center_button">
-        <Link  class="btn btn-primary" to="/inscription/groupsList" onClick={this.addGroup}><i class="fas fa-save"> Save</i></Link>
+        <Link  class="btn btn-primary" to="/groupsPage/groupsList" onClick={this.addGroup}><i class="fas fa-save"> Save</i></Link>
         </div>
         </div>
       </div>

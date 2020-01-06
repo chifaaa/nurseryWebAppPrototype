@@ -59,7 +59,7 @@ return (
 <div className="col-xs-12 col-sm-6 col-md-4">
 <div className="edit">
   <div className="frontside">
-    <div className="card">
+    <div className="card" style={{height:'fit-content'}}>
 
       <div className="card-body">
         <h4 className="card-title">{this.state.firstName} {this.state.lastName}</h4>
@@ -98,7 +98,7 @@ return (
           
         </div>
         <div className="center_button">
-        <Link  class="btn btn-primary" to="/inscription/AssistantsList" onClick={this.modifyAssistant}><i class="fas fa-save"> Save</i></Link>
+        <Link  class="btn btn-primary" to="/assistantsPage/AssistantsList" onClick={this.modifyAssistant}><i class="fas fa-save"> Save</i></Link>
        
         </div>
 

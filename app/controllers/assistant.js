@@ -3,11 +3,11 @@ const babyCtr = require('./baby');
 const groupCtr = require('./group');
 
 
-exports.addBaby =(assistantId,babyId)=>{
-   return Assistant.findByIdAndUpdate(assistantId,{
-       babies:[babyId]
-   }, { new: true }).exec()
-}
+// exports.addBaby =(assistantId,babyId)=>{
+//    return Assistant.findByIdAndUpdate(assistantId,{
+//        babies:[babyId]
+//    }, { new: true }).exec()
+// }
 
 
 // Create and Save a new Assistant
@@ -49,16 +49,45 @@ exports.create = (req, res) => {
     // same thing for clubs
 
     // Save Assistant in the database
+
+
     assistant.save()
-        .then(data => {
-            res.send(data);
-        }).catch(err => {
+    .then(assistantDoc => {
+
+        groupCtr.addAssistantToGroup(assistantDoc.assistantGroup, assistantDoc._id)
+        .then((groupDoc) => res.send(groupDoc))
+        .catch(err => {
             res.status(500).send({
-                message: err.message || "Some error occurred while creating the Assistant."
+                message: err.message || "Some error occurred while updating group."
             });
+        });  
+
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message || "Some error occurred while saving the assistant."
         });
-    })
+    });
 }
+)
+
+
+
+
+
+};
+
+
+
+//     assistant.save()
+//         .then(data => {
+//             res.send(data);
+//         }).catch(err => {
+//             res.status(500).send({
+//                 message: err.message || "Some error occurred while creating the Assistant."
+//             });
+//         });
+//     })
+// }
 
 
 

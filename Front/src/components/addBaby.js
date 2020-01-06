@@ -60,7 +60,7 @@ else { alert('Required fields!! Name and tel and email and birthdate') }
           <div className="col-xs-12 col-sm-6 col-md-4">
           <div className="edit">
             <div className="frontside">
-              <div className="card">
+              <div className="card" style={{height:'fit-content'}}>
           
                 <div className="card-body">
                   <h4 className="card-title"> Add Baby</h4>
@@ -97,7 +97,7 @@ else { alert('Required fields!! Name and tel and email and birthdate') }
                     
                   </div>
                   <div className="center_button">
-                  <Link  class="btn btn-primary" to="/inscription/BabyList" onClick={this.addBaby}><i class="fas fa-save"> Save</i></Link>
+                  <Link  class="btn btn-primary" to="/babiesListPage" onClick={this.addBaby}><i class="fas fa-save"> Save</i></Link>
                   </div>
                   </div>
                 </div>

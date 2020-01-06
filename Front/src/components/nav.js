@@ -24,8 +24,12 @@ const Navb = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
+            
             <NavItem>
+            <Link to='/'> 
               <NavLink>Home</NavLink>
+              </Link>
+
             </NavItem>
 
             <UncontrolledDropdown nav inNavbar>
@@ -47,15 +51,45 @@ const Navb = (props) => {
               </DropdownMenu>
             </UncontrolledDropdown>
 
-            <NavItem>
-              <NavLink >Our Babies</NavLink>
-            </NavItem>
+            <UncontrolledDropdown nav inNavbar>
+            <DropdownToggle nav caret>
+              Babies Groups
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem>
+                <Link to='/groupsPage'> 
+                <NavLink>Groups</NavLink>
+                </Link>
+                </DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem>
+                <Link to='/babiesListPage'> 
+                <NavLink>Babies List</NavLink>
+                  </Link>
+                </DropdownItem>
+                <DropdownItem/>
+              </DropdownMenu>
+            </UncontrolledDropdown>
 
-            <NavItem>
-            <Link to='/inscription'> 
-            <NavLink >Inscription</NavLink>
-            </Link>
-            </NavItem>
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+              Inscription
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem>
+                <Link to='/parentsPage'> 
+                <NavLink >Parent</NavLink>
+                </Link> 
+                </DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem>
+                <Link to='/assistantsPage'> 
+                <NavLink > Child Care <br/> Assistant</NavLink>
+                </Link> 
+                </DropdownItem>
+                <DropdownItem/>
+              </DropdownMenu>
+            </UncontrolledDropdown>
 
             <NavItem>
               <NavLink href="/components/">Contacts</NavLink>

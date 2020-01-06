@@ -50,7 +50,7 @@ return (
   <div className="col-xs-12 col-sm-6 col-md-4">
   <div className="edit">
     <div className="frontside">
-      <div className="card">
+      <div className="card" style={{height:'fit-content'}}>
 
         <div className="card-body">
           <h4 className="card-title">{this.state.groupName}</h4>
@@ -66,7 +66,7 @@ return (
             
           </div>
           <div className="center_button">
-          <Link  class="btn btn-primary" to="/inscription/groupsList" onClick={this.modifyGroup}><i class="fas fa-save"> Save</i></Link>
+          <Link  class="btn btn-primary" to="/groupsPage/groupsList" onClick={this.modifyGroup}><i class="fas fa-save"> Save</i></Link>
           {/* <Link  class="btn btn-primary" to={`/inscription/BabyNew/${this.state.id}`}><i class="fas fa-plus">Add Baby</i></Link> */}
           </div>
 

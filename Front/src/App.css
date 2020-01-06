@@ -47,7 +47,7 @@ margin: 10px;
 } 
 .navcontainer{
   margin-top: 50px;
-  width: 500px;
+  width: 600px;
   height: fit-content;
 }
 .carousel-caption{
@@ -149,7 +149,7 @@ section .section-title {
 
 #team .card {
     border: none;
-    background: #ffffff;
+    background: #ffe8c5;
 }
 
 .image-flip:hover .backside,
@@ -231,7 +231,7 @@ section .section-title {
 
 .frontside .card,
 .backside .card {
-    height: 400px;
+    height: 450px;
     width: 350px;
     
 }
@@ -250,8 +250,8 @@ section .section-title {
 }
 
 .card a.btn-primary.btn-delete {
-  background-color:rgb(235, 74, 74);
-  border-color:rgb(235, 74, 74);
+  background-color:rgb(255, 134, 64);
+  border-color:rgb(255, 134, 64);
 }
 .frontside .card .card-title,
 .backside .card .card-title {
@@ -278,7 +278,7 @@ a.btn:hover {
 }
 .card input{
   border:0;
-background: #eeeeee;
+background: #fff9f0;
 display: table-cell; 
 width: 100%;
 }

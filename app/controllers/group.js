@@ -10,6 +10,16 @@ exports.addBabyToGroup = (groupId, babyId) => {
         $push: { babies: babyId }
     }, { new: true }).exec()
 }
+
+
+
+
+exports.addAssistantToGroup = (groupId, assistantId) => {
+    return Group.findByIdAndUpdate(groupId, {
+        $push: { assistants: assistantId }
+    }, { new: true }).exec()
+}
+
 // Create and Save a new Note
 exports.create = (req, res) => {
     console.log('req', req)
@@ -42,6 +52,7 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
     Group.find()
         .populate('babies')
+        .populate('assistants')
         .then(groups => {
             res.send(groups);
         }).catch(err => {

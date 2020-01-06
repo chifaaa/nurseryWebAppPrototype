@@ -62,7 +62,7 @@ else { alert('Required fields!! Name and tel and email and adress and groupName'
           <div className="col-xs-12 col-sm-6 col-md-4">
           <div className="edit">
             <div className="frontside">
-              <div className="card">
+              <div className="card" style={{height:'fit-content'}}>
           
                 <div className="card-body">
                   <h4 className="card-title"> Add assistant</h4>
@@ -105,7 +105,7 @@ else { alert('Required fields!! Name and tel and email and adress and groupName'
                     
                   </div>
                   <div className="center_button">
-                  <Link  class="btn btn-primary" to="/inscription/AssistantsList" onClick={this.addAssistant}><i class="fas fa-save"> Save</i></Link>
+                  <Link  class="btn btn-primary" to="/assistantsPage/AssistantsList" onClick={this.addAssistant}><i class="fas fa-save"> Save</i></Link>
                   </div>
                   </div>
                 </div>
