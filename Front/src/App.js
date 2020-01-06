@@ -39,7 +39,7 @@ function App() {
       
       <Route exact path="/parentsPage" component ={ParentsPage}/>
       <Route exact path="/parentsPage/ParentNew" component={ParentAdd}/>
-      <Route exact path="/parentsPage/ParentsList" component={ParentList}/>
+      {/* <Route exact path="/parentsPage/ParentsList" component={ParentList}/> */}
       <Route path="/modifyparent/:id/:firstName/:lastName/:tel/:email/:adress/:sex"  component={ModifyParent}/>
 
       <Route exact path="/assistantsPage" component ={AssistantsPage}/>
