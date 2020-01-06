@@ -23,14 +23,15 @@ import ModifyGroup from './components/modifyGroup'
 import GroupAdd from './components/addGroup';
 
 import Header from './components/header';
+import Footer from './components/footer';
 
 function App() {
   return (
     
     <Router>
-             <Route path ={'/'} component ={Header}/>
-
+      <Route path ={'/'} component ={Header}/>
       <Route exact path ={'/'} component ={HomePage}/>
+
       <Route exact path="/babiesListPage" component ={BabiesPage}/>
       <Route exact path="/babiesListPage/BabyNew/:parentId" component={BabyAdd}/>
       {/* <Route exact path="/babiesListPage/BabyList" component={BabyList}/>  */}
@@ -50,6 +51,7 @@ function App() {
       <Route exact path="/groupsPage/GroupNew" component={GroupAdd}/>
       <Route exact path="/groupsPage/groupsList" component={GroupList}/>
       <Route path="/modifygroup/:id/:groupName"  component={ModifyGroup}/>
+      <Route path ={'/'} component ={Footer}/>
 
 
     </Router>
