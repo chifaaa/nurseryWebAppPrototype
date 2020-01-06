@@ -1,10 +1,7 @@
 import React from 'react';
-import Navb from './components/nav';
 import Car from './components/carousel';
 import './App.css';
 import { Features } from './components/features';
-import stork from './cigue.png'
-import { BrowserRouter as Router, Route,Switch,Link } from 'react-router-dom';
 
 
 function HomePage() {
@@ -12,11 +9,7 @@ function HomePage() {
     
 
             <div className="App">
-     <div className='logoandnav'>
-       <img className='logo' src={stork}/> 
-       <div className='logotextcontainer'><p className='logotext'>Baby<br/>Storks</p></div>
-     <div className='navcontainer'><Navb/></div>
-     </div>
+
      <Car/>
      <Features/>
 

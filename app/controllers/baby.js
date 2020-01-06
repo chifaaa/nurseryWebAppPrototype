@@ -22,7 +22,7 @@ exports.create = (req, res) => {
     groupPromise.then(groupDoc => {
         if (!groupDoc) {
             return res.status(400).send({
-                message: "this groupName  not exist"
+                message: "this group does not exist"
             });
 
         }

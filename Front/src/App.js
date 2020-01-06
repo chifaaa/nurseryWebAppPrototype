@@ -1,10 +1,7 @@
 import React from 'react';
-import Navb from './components/nav';
-import Car from './components/carousel';
+
 import './App.css';
-import { Features } from './components/features';
-import stork from './cigue.png'
-import { BrowserRouter as Router, Route,Switch,Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 import AssistantsPage from './assistantsPage';
 import ParentsPage from './parentsPage';
 import BabiesPage from './babiesListPage';
@@ -12,7 +9,7 @@ import GroupsPage from './groupsPage';
 import HomePage from './homePage';
 
 import BabyAdd from './components/addBaby'
-import BabyList from './components/listBabies'
+
 import modifyBaby from './components/modifyBaby'
 import ParentAdd from './components/addParent'
 import ParentList from './components/listParents'
@@ -25,14 +22,15 @@ import GroupList from './components/listGroups'
 import ModifyGroup from './components/modifyGroup'
 import GroupAdd from './components/addGroup';
 
+import Header from './components/header';
 
 function App() {
   return (
     
     <Router>
-       
+             <Route path ={'/'} component ={Header}/>
+
       <Route exact path ={'/'} component ={HomePage}/>
-      
       <Route exact path="/babiesListPage" component ={BabiesPage}/>
       <Route exact path="/babiesListPage/BabyNew/:parentId" component={BabyAdd}/>
       {/* <Route exact path="/babiesListPage/BabyList" component={BabyList}/>  */}
