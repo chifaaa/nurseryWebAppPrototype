@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
+import ParentList from './components/listParents'
+import Addbutton from './addbutton.png'
 
 class ParentsPage extends Component {
   render() { 
     return ( 
    
-    <div className="app_cont">
+   
 
 
  
-      <h1>Parents </h1>
-      <p className="plink">  <Link to="/parentsPage/ParentsList"><span>Parents list</span></Link>
-      <Link to="/parentsPage/ParentNew"><span>Add Parent</span></Link></p>
+      <div>
+      <ParentList/>
+       <Link to="/parentsPage/ParentNew"><img className='addbutton' src={Addbutton}/> </Link>
+      
 
-    </div>
+      </div>
 
     );
   }
 }
 export default ParentsPage;
+
