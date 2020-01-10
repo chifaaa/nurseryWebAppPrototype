@@ -7,7 +7,7 @@ module.exports = (app) => {
     //  Retrieve all assistants
      app.get('/assistants', assistants.findAll);
 
-    //  Retrieve a single assistant with parentId
+    //  Retrieve a single assistant with assistantId
      app.get('/assistant/:assistantId', assistants.findOne);
 
     //  Update a assistant with assistantId

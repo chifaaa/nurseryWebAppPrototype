@@ -45,7 +45,7 @@ function App() {
       <Route exact path="/assistantsPage" component ={AssistantsPage}/>
       <Route exact path="/assistantsPage/AssistantNew" component={AssistantAdd}/>
       <Route exact path="/assistantsPage/AssistantsList" component={AssistantList}/>
-      <Route path="/modifyassistant/:id/:firstName/:lastName/:tel/:email/:adress"  component={ModifyAssistant}/>
+      <Route path="/modifyassistant/:id/:firstName/:lastName/:tel/:email/:adress/:groupName"  component={ModifyAssistant}/>
 
       <Route exact path="/groupsPage" component ={GroupsPage}/>
       <Route exact path="/groupsPage/GroupNew" component={GroupAdd}/>
