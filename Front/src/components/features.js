@@ -1,11 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export const Features = () =>{
 return(
     <div className='postcardsdiv'>
 
 <div className="last-section-box">
-        <h2>Our Clubs</h2>
+<Link to='/clubsPage'> 
+ <h2>Our Clubs</h2>
+</Link>
         <img src='https://images.9monate.de/img/incoming/origs125103/2546113544-w830-h3000/166623168.jpg' style={{borderRadius: '5px',height: '300px',width: '440px'}}/>
         <div><p className='featuresdescription'>Perceived end knowledge certainly day sweetness why cordially. Ask quick six seven offer see among. Handsome met debating sir dwelling age material. As style lived he worse dried. Offered related so visitor we private removed. Moderate do subjects to distance. </p></div>
         <br/> <br/> <br/> <br/> <br/> <br/><div style={{textAlign:'right'}}><a href='#'>Read More</a></div>

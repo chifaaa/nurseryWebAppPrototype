@@ -106,21 +106,7 @@ else { alert('Required fields!! Name and tel and email and birthdate') }
           </div>
           </section>
           
-          
-          
           )
           }
           };
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
- 
 export default BabyAdd ;
