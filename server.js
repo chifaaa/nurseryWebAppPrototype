@@ -40,7 +40,8 @@ const RoutingParent = require('./app/routes/parent.js')
 RoutingParent(app);
 const RoutingAssistant = require('./app/routes/assistant.js')
 RoutingAssistant(app);
-
+const RoutingClub = require('./app/routes/clubsRoute.js')
+RoutingClub(app);
 
 
 

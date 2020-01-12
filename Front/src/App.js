@@ -6,21 +6,28 @@ import AssistantsPage from './assistantsPage';
 import ParentsPage from './parentsPage';
 import BabiesPage from './babiesListPage';
 import GroupsPage from './groupsPage';
+import ClubsPage from './clubsPage';
+
 import HomePage from './homePage';
 
-import BabyAdd from './components/addBaby'
+import BabyAdd from './components/addBaby';
+import modifyBaby from './components/modifyBaby';
 
-import modifyBaby from './components/modifyBaby'
-import ParentAdd from './components/addParent'
-import ParentList from './components/listParents'
-import ModifyParent from './components/modifyParent'
-import AssistantAdd from './components/addAssistant'
-import AssistantList from './components/listAssistants'
-import ModifyAssistant from './components/modifyAssistant'
+import ParentAdd from './components/addParent';
+import ParentList from './components/listParents';
+import ModifyParent from './components/modifyParent';
 
-import GroupList from './components/listGroups'
-import ModifyGroup from './components/modifyGroup'
+import AssistantAdd from './components/addAssistant';
+import AssistantList from './components/listAssistants';
+import ModifyAssistant from './components/modifyAssistant';
+
+import GroupList from './components/listGroups';
+import ModifyGroup from './components/modifyGroup';
 import GroupAdd from './components/addGroup';
+
+import ClubsList from './components/listClubs';
+import ModifyClub from './components/modifyClub';
+import AddClub from './components/addClub';
 
 import Header from './components/header';
 import Footer from './components/footer';
@@ -45,12 +52,19 @@ function App() {
       <Route exact path="/assistantsPage" component ={AssistantsPage}/>
       <Route exact path="/assistantsPage/AssistantNew" component={AssistantAdd}/>
       <Route exact path="/assistantsPage/AssistantsList" component={AssistantList}/>
-      <Route path="/modifyassistant/:id/:firstName/:lastName/:tel/:email/:adress"  component={ModifyAssistant}/>
+      <Route path="/modifyassistant/:id/:firstName/:lastName/:tel/:email/:adress/:groupName"  component={ModifyAssistant}/>
 
       <Route exact path="/groupsPage" component ={GroupsPage}/>
       <Route exact path="/groupsPage/GroupNew" component={GroupAdd}/>
       <Route exact path="/groupsPage/groupsList" component={GroupList}/>
       <Route path="/modifygroup/:id/:groupName"  component={ModifyGroup}/>
+
+      <Route exact path="/clubsPage" component ={ClubsPage}/>
+      <Route exact path="/clubsPage/ClubNew" component={AddClub}/>
+      <Route exact path="/clubsPage/clubsList" component={ClubsList}/>
+      <Route path="/modifyclub/:id/:name/:description/:day"  component={ModifyClub}/>
+
+
       <Route path ={'/'} component ={Footer}/>
 
 

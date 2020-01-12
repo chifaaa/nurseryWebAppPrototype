@@ -1,5 +1,4 @@
 const Assistant = require('../models/assistant.js');
-const babyCtr = require('./baby');
 const groupCtr = require('./group');
 
 
@@ -71,49 +70,8 @@ exports.create = (req, res) => {
 )
 
 
-
-
-
 };
 
-
-
-//     assistant.save()
-//         .then(data => {
-//             res.send(data);
-//         }).catch(err => {
-//             res.status(500).send({
-//                 message: err.message || "Some error occurred while creating the Assistant."
-//             });
-//         });
-//     })
-// }
-
-
-
-
-
-
-
-// Retrieve and return all assistants from the database.
-// exports.findAll = (req, res) => {
-//     Assistant.find()
-//         .populate('baby', 'name')
-//         .then(assistants => {
-//             res.send(assistants.map(assistant => {
-//                 assistantObj = assistant.toObject()
-//                 if (assistantObj.baby) {
-//                     assistantObj.babyName = assistantObj.baby.name
-//                     delete assistantObj.baby
-//                 }
-//                 return assistantObj
-//             }));
-//         }).catch(err => {
-//             res.status(500).send({
-//                 message: err.message || "Some error occurred while retrieving assistants."
-//             });
-//         });
-// };
 
 
 exports.findAll = (req, res) => {
@@ -152,7 +110,7 @@ exports.findOne = (req, res) => {
                 });
             }
             return res.status(500).send({
-                message: "Error retrieving Assistant with id " + req.params.AssistantId
+                message: "Error retrieving Assistant with id " + req.params.assistantId
             });
         });
 };
@@ -165,13 +123,13 @@ exports.update = (req, res) => {
             message: "Assistant's firstname and lastname and  tel and adress and email and groupName can not be empty"
         });
     }
-    // babyCtr.fetch(req.body.babyName).then(babyDoc => {
-    //     if (!babyDoc) {
-    //         return res.status(400).send({
-    //             message: "this babyName  not exist"
-    //         });
+    groupCtr.fetch(req.body.groupName).then(groupDoc => {
+        if (!groupDoc) {
+            return res.status(400).send({
+                message: "this groupName  not exist"
+            });
 
-    //     }
+        }
         // Find Assistant and update it with the request body
         Assistant.findByIdAndUpdate(req.params.assistantId, {
             firstName: req.body.firstName,
@@ -179,7 +137,7 @@ exports.update = (req, res) => {
             tel: req.body.tel,
             email: req.body.email,
             adress: req.body.adress,
-            groupName: req.body.groupName,
+            assistantGroup: groupDoc._id,
             
 
         }, { new: true })
@@ -201,7 +159,7 @@ exports.update = (req, res) => {
                     message: "Error updating Assistant with id " + req.params.assistantId
                 });
             });
-    // });
+    });
 };
 
 // Delete a Assistant with the specified noteId in the request
