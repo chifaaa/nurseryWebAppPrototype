@@ -41,6 +41,12 @@ RoutingParent(app);
 const RoutingAssistant = require('./app/routes/assistant.js')
 RoutingAssistant(app);
 
+const Users = require('./app/routes/Users.js')
+Users(app);
+
+
+app.use('/users',Users)
+
 
 
 
