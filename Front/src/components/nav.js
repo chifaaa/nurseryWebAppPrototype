@@ -38,15 +38,17 @@ const Navb = (props) => {
               </DropdownToggle>
               <DropdownMenu>
                 <DropdownItem>
-                  Meals
+                  <NavLink>Meals</NavLink>
                 </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>
-                  Activities
+                  <NavLink>Activities</NavLink>
                 </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>
-                  Clubs
+                <Link to='/clubsPage'> 
+                <NavLink>Clubs</NavLink>
+                </Link>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
