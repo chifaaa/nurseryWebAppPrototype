@@ -7,6 +7,8 @@ import ParentsPage from './parentsPage';
 import BabiesPage from './babiesListPage';
 import GroupsPage from './groupsPage';
 import ClubsPage from './clubsPage';
+import MealsPage from './mealsPage';
+
 
 import HomePage from './homePage';
 
@@ -28,6 +30,12 @@ import GroupAdd from './components/addGroup';
 import ClubsList from './components/listClubs';
 import ModifyClub from './components/modifyClub';
 import AddClub from './components/addClub';
+
+
+import MealsList from './components/listMeals';
+import ModifyMeal from './components/modifyMeal';
+import AddMeal from './components/addMeal';
+
 
 import Header from './components/header';
 import Footer from './components/footer';
@@ -63,6 +71,12 @@ function App() {
       <Route exact path="/clubsPage/ClubNew" component={AddClub}/>
       <Route exact path="/clubsPage/clubsList" component={ClubsList}/>
       <Route path="/modifyclub/:id/:name/:description/:day"  component={ModifyClub}/>
+
+
+      <Route exact path="/mealsPage" component ={MealsPage}/>
+      <Route exact path="/mealsPage/MealNew" component={AddMeal}/>
+      <Route exact path="/mealsPage/mealsList" component={MealsList}/>
+      <Route path="/modifymeal/:id/:day/:description"  component={ModifyMeal}/>
 
 
       <Route path ={'/'} component ={Footer}/>

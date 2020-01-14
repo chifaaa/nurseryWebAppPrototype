@@ -38,7 +38,9 @@ const Navb = (props) => {
               </DropdownToggle>
               <DropdownMenu>
                 <DropdownItem>
+                <Link to='/mealsPage'> 
                   <NavLink>Meals</NavLink>
+                  </Link>
                 </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>
