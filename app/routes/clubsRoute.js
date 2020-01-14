@@ -1,7 +1,7 @@
 module.exports = (app) => {
     const clubs = require('../controllers/club.js');
 
-    // Create a new Group
+    // Create a new club
     app.post('/club/create', clubs.create);
 
     //  Retrieve all clubs

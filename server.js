@@ -42,7 +42,8 @@ const RoutingAssistant = require('./app/routes/assistant.js')
 RoutingAssistant(app);
 const RoutingClub = require('./app/routes/clubsRoute.js')
 RoutingClub(app);
-
+const RoutingEvent = require('./app/routes/eventsRoute.js')
+RoutingEvent(app);
 
 
 // define a simple route

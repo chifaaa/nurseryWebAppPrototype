@@ -60,7 +60,10 @@ class BabyList extends Component {
                                             <div className="backside">
                                                 <div className="card">
                                                     <div className="card-body text-center mt-4">
-                                                        <h4 className="card-title">{el.firstName} {el.lastName}</h4>
+
+                                                       {/* <Link to="/eventsPage"><h4 className="card-title">{el.firstName} {el.lastName}</h4> </Link> */}
+                                                       <Link to={`/eventsPage/${el._id}`}><h4 className="card-title">{el.firstName} {el.lastName}</h4> </Link>
+
                                                         <p className="card-text"><strong>Birthdate:</strong> {el.birthdate.substring(0, 10)}</p>
                                                         <p className="card-text"><strong>Sex:</strong> {el.sex}</p>
                                                         <p className="card-text"><strong>Group:</strong> {el.groupName}</p>
@@ -70,6 +73,7 @@ class BabyList extends Component {
                                                     <div className= "center_button">
                                                         <a href="#" class="btn btn-primary  btn-delete"> <i class="fas fa-trash" > <span onClick={() => { this.delete(el._id) }} >Delete</span></i></a>
                                                         <Link class="btn btn-primary" to={`/modifybaby/${el._id}/${el.firstName}/${el.lastName}/${el.birthdate.substring(0, 10)}/${el.sex}/${el.groupName}`}><i class="fas fa-edit"> Edit</i></Link>
+                                                        <Link  class="btn btn-primary" to={`/eventsPage/EventNew/${el._id}`}><i class="fas fa-edit"> Add Event</i></Link>
 
                                                     </div>
 

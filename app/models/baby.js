@@ -8,6 +8,8 @@ lastName: String,
 birthdate: Date,
 sex: String,
  group: { type: mongoose.Schema.Types.ObjectId, ref: 'Group' }, 
+ events: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Event' }],
+
 // clubs: [{ type: Schema.Types.ObjectId, ref: 'Club' }]
 }
 );

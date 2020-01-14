@@ -46,7 +46,7 @@ class BabyAdd extends Component {
  
   }
 
-else { alert('Required fields!! Name and tel and email and birthdate') }
+else { alert('Required fields!! Name and lastname and birthdate') }
 }
 
        render() { 

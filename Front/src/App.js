@@ -29,6 +29,10 @@ import ClubsList from './components/listClubs';
 import ModifyClub from './components/modifyClub';
 import AddClub from './components/addClub';
 
+import EventsList from './components/listEvents';
+import EventsPage from './eventsPage';
+import AddEvent from './components/addEvent';
+
 import Header from './components/header';
 import Footer from './components/footer';
 
@@ -64,6 +68,9 @@ function App() {
       <Route exact path="/clubsPage/clubsList" component={ClubsList}/>
       <Route path="/modifyclub/:id/:name/:description/:day"  component={ModifyClub}/>
 
+      <Route exact path="/eventsPage/:babyId" component ={EventsList}/>
+      <Route exact path="/eventsPage/EventNew/:babyId" component={AddEvent}/>
+      
 
       <Route path ={'/'} component ={Footer}/>
 
