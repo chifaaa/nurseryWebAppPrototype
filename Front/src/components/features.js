@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import UploadPreview from './imageUploader';
 
 export const Features = () =>{
 return(
@@ -20,13 +21,7 @@ return(
 </p></div>
         <div style={{textAlign:'right'}}><a href='#'>Read More</a></div>
 </div>
-<div className="last-section-box">
-        <h2>Picture of the week</h2>
-        <img src='http://nebula.wsimg.com/a15c5229c6837f9262fcf55dca3bed0c?AccessKeyId=3DE6952AFDB613E1FE46&disposition=0&alloworigin=1' style={{borderRadius: '5px',height: '300px',width: '440px'}}/>
-        <div><p className='featuresdescription'>Boy favourable day can introduced sentiments entreaties. Noisier carried of in warrant because. So mr plate seems cause chief widen first. Two differed husbands met screened his. Bed was form wife out ask draw. Wholly coming at we no enable. Offending sir delivered questions now new met. Acceptance she interested new boisterous day discretion celebrated. 
-</p></div>
-        <br/> <br/> <br/> <br/> <div style={{textAlign:'right'}}><a href='#'>Update</a></div>
-</div>
+<UploadPreview/>
 </div>
 )
 }

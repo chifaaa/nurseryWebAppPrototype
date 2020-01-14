@@ -3,9 +3,11 @@ const groupCtr = require('./group.js');
 const parentCtr = require('./parent.js');
 
 
-// exports.fetch = (name) => {
-//     return Baby.findOne({ name }).exec()
-// }
+exports.addEventToBaby = (babyId, eventId) => {
+    return Baby.findByIdAndUpdate(babyId, {
+        $push: { events: eventId }
+    }, { new: true }).exec()
+}
 // Create and Save a new Baby
 exports.create = (req, res) => {
     // Validate request
@@ -92,7 +94,10 @@ exports.findAll = (req, res) => {
 // Find a single baby with a babyId
 exports.findOne = (req, res) => {
     Baby.findById(req.params.babyId)
+    .populate('events')
+
         .then(baby => {
+            
             if (!baby) {
                 return res.status(404).send({
                     message: "baby not found with id " + req.params.babyId
