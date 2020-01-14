@@ -2,28 +2,28 @@ import React from 'react';
 
 import './App.css';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
-import AssistantsPage from './assistantsPage';
-import ParentsPage from './parentsPage';
-import BabiesPage from './babiesListPage';
-import GroupsPage from './groupsPage';
-import HomePage from './homePage';
+// import AssistantsPage from './assistantsPage';
+// import ParentsPage from './parentsPage';
+// import BabiesPage from './babiesListPage';
+// import GroupsPage from './groupsPage';
+// import HomePage from './homePage';
 
-import BabyAdd from './components/addBaby'
+// import BabyAdd from './components/addBaby'
 
-import modifyBaby from './components/modifyBaby'
-import ParentAdd from './components/addParent'
-import ParentList from './components/listParents'
-import ModifyParent from './components/modifyParent'
-import AssistantAdd from './components/addAssistant'
-import AssistantList from './components/listAssistants'
-import ModifyAssistant from './components/modifyAssistant'
+// import modifyBaby from './components/modifyBaby'
+// import ParentAdd from './components/addParent'
+// import ParentList from './components/listParents'
+// import ModifyParent from './components/modifyParent'
+// import AssistantAdd from './components/addAssistant'
+// import AssistantList from './components/listAssistants'
+// import ModifyAssistant from './components/modifyAssistant'
 
-import GroupList from './components/listGroups'
-import ModifyGroup from './components/modifyGroup'
-import GroupAdd from './components/addGroup';
+// import GroupList from './components/listGroups'
+// import ModifyGroup from './components/modifyGroup'
+// import GroupAdd from './components/addGroup';
 
-import Header from './components/header';
-import Footer from './components/footer';
+// import Header from './components/header';
+// import Footer from './components/footer';
 
 import Navbar from './components/Navbar';
 import Landing from './components/Landing';
@@ -38,17 +38,16 @@ import Profile from './components/Profile';
 
 function App() {
   return (
-    
+    <div className="App">
+      <Navbar/>
     <Router>
-      <div className="App">
-        <Navbar/>
+      
       <Route exact path ={'/'} component ={Landing}/>
       <div className="container">
       <Route exact path ={'/register'} component ={Register}/>
       <Route exact path ={'/login'} component ={Login}/>
       <Route exact path ={'/profile'} component ={Profile}/>
       </div>
-      </div>
       
       
       
@@ -56,33 +55,34 @@ function App() {
       
       
       
-      <Route path ={'/'} component ={Header}/>
-      <Route exact path ={'/'} component ={HomePage}/>
+      
+      {/* <Route path ={'/'} component ={Header}/> */}
+      {/* <Route exact path ={'/'} component ={HomePage}/> */}
 
-      <Route exact path="/babiesListPage" component ={BabiesPage}/>
+      {/* <Route exact path="/babiesListPage" component ={BabiesPage}/>
       <Route exact path="/babiesListPage/BabyNew/:parentId" component={BabyAdd}/>
       {/* <Route exact path="/babiesListPage/BabyList" component={BabyList}/>  */}
-      <Route path="/modifyBaby/:id/:firstName/:lastName/:birthdate/:sex/:groupName"  component={modifyBaby}/>
+      {/* <Route path="/modifyBaby/:id/:firstName/:lastName/:birthdate/:sex/:groupName"  component={modifyBaby}/> */}
       
-      <Route exact path="/parentsPage" component ={ParentsPage}/>
-      <Route exact path="/parentsPage/ParentNew" component={ParentAdd}/>
+      {/* <Route exact path="/parentsPage" component ={ParentsPage}/> */}
+      {/* <Route exact path="/parentsPage/ParentNew" component={ParentAdd}/> */}
       {/* <Route exact path="/parentsPage/ParentsList" component={ParentList}/> */}
-      <Route path="/modifyparent/:id/:firstName/:lastName/:tel/:email/:adress/:sex"  component={ModifyParent}/>
+      {/* <Route path="/modifyparent/:id/:firstName/:lastName/:tel/:email/:adress/:sex"  component={ModifyParent}/> */}
 
-      <Route exact path="/assistantsPage" component ={AssistantsPage}/>
+      {/* <Route exact path="/assistantsPage" component ={AssistantsPage}/>
       <Route exact path="/assistantsPage/AssistantNew" component={AssistantAdd}/>
       <Route exact path="/assistantsPage/AssistantsList" component={AssistantList}/>
-      <Route path="/modifyassistant/:id/:firstName/:lastName/:tel/:email/:adress"  component={ModifyAssistant}/>
+      <Route path="/modifyassistant/:id/:firstName/:lastName/:tel/:email/:adress"  component={ModifyAssistant}/> */}
 
-      <Route exact path="/groupsPage" component ={GroupsPage}/>
-      <Route exact path="/groupsPage/GroupNew" component={GroupAdd}/>
-      <Route exact path="/groupsPage/groupsList" component={GroupList}/>
+      {/* <Route exact path="/groupsPage" component ={GroupsPage}/>
+      <Route exact path="/groupsPage/GroupNew" component={GroupAdd}/> */}
+      {/* <Route exact path="/groupsPage/groupsList" component={GroupList}/>
       <Route path="/modifygroup/:id/:groupName"  component={ModifyGroup}/>
-      <Route path ={'/'} component ={Footer}/>
+      <Route path ={'/'} component ={Footer}/>  */}
 
 
     </Router>
-
+    </div>
   );
 }
 

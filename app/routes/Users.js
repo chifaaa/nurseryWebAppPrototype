@@ -2,10 +2,10 @@ const express=require("express")
 const users=express.Router()
 const cors=require("cors")
 const jwt=require("jsonwebtoken")
-const bcrypt= require("bcryptjs")
+const bcrypt= require("bcrypt-nodejs")
 
 
-const User= require("../models/User")
+const User= require("../models/user")
 users.use(cors())
 
 process.env.SECRET_KEY= 'secret'
