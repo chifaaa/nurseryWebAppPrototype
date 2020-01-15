@@ -6,7 +6,13 @@ exports.addBaby = (parentId, babyId) => {
         $push: { babies: babyId }
     }, { new: true }).exec()
 }
+exports.removeBabyFromParent = (parentId, babyId) => {
+    return Parent.findByIdAndUpdate(parentId, {
+        $pull: { babies: babyId }
 
+
+    }, { new: true }).exec()
+}
 // Create and Save a new Parent
 exports.create = (req, res) => {
     console.log("parent create was called")

@@ -67,6 +67,8 @@ class BabyList extends Component {
                                                         <p className="card-text"><strong>Birthdate:</strong> {el.birthdate.substring(0, 10)}</p>
                                                         <p className="card-text"><strong>Sex:</strong> {el.sex}</p>
                                                         <p className="card-text"><strong>Group:</strong> {el.groupName}</p>
+                                                        {/* <p className="card-text"><strong>Parent:</strong> {el.parent.lastName}</p> */}
+
                                                         <ul className="list-inline">
                                                         </ul>
                                                     </div>

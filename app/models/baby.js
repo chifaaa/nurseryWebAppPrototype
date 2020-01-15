@@ -7,6 +7,7 @@ firstName: String,
 lastName: String,
 birthdate: Date,
 sex: String,
+ parent: { type: mongoose.Schema.Types.ObjectId, ref: 'Parent' },   
  group: { type: mongoose.Schema.Types.ObjectId, ref: 'Group' }, 
  events: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Event' }],
 
