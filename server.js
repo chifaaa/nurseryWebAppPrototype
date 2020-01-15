@@ -45,7 +45,8 @@ RoutingClub(app);
 const RoutingEvent = require('./app/routes/eventsRoute.js')
 RoutingEvent(app);
 
-
+const RoutingMeal = require('./app/routes/mealsRoute.js')
+RoutingMeal(app);
 // define a simple route
 // app.get('/create/group', (req, res) => {
 //   const newGroup = new group({name:'firstgroup'})

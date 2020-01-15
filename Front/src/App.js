@@ -8,6 +8,7 @@ import BabiesPage from './babiesListPage';
 import GroupsPage from './groupsPage';
 import ClubsPage from './clubsPage';
 import ClubsPlanning from './clubsPlanning';
+import MealsPage from './mealsPage';
 
 import HomePage from './homePage';
 
@@ -29,6 +30,9 @@ import GroupAdd from './components/addGroup';
 import ClubsList from './components/listClubs';
 import ModifyClub from './components/modifyClub';
 import AddClub from './components/addClub';
+
+import ModifyMeal from './components/modifyMeal';
+import AddMeal from './components/addMeal';
 
 import EventsList from './components/listEvents';
 import EventsPage from './eventsPage';
@@ -69,6 +73,12 @@ function App() {
       <Route exact path="/clubsPage/clubsList" component={ClubsList}/>
       <Route path="/modifyclub/:id/:name/:description/:day"  component={ModifyClub}/>
       <Route exact path="/clubsPlanning" component={ClubsPlanning}/>
+
+      <Route exact path="/mealsPage" component ={MealsPage}/>
+      <Route exact path="/mealsPage/mealNew" component={AddMeal}/>
+      <Route path="/modifymeal/:id/:day/:mainMeal/:dessert/:snack"  component={ModifyMeal}/>
+      {/* <Route exact path="/clubsPlanning" component={ClubsPlanning}/> */}
+
 
       <Route exact path="/eventsPage/:babyId" component ={EventsList}/>
       <Route exact path="/eventsPage/EventNew/:babyId" component={AddEvent}/>
