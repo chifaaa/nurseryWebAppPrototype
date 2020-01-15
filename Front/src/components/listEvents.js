@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
+import Addbutton from '../addbutton.png'
+
 class EventsList extends Component {
     constructor(props) {
         super(props)
@@ -72,6 +74,8 @@ class EventsList extends Component {
 
                     </div>
                 </div>
+                <Link to={`/eventsPage/EventNew/${this.props.match.params.babyId}`}><span><img className='addbutton' src={Addbutton}/> </span></Link>
+
             </section>
 
 

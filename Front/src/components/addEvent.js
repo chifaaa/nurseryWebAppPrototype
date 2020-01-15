@@ -14,6 +14,7 @@ class AddEvent extends Component {
   }
 
 
+  
   setStartTime=e=> { 
     this.setState({
         startTime:e.target.value
@@ -84,7 +85,7 @@ else { alert('Required fields!! startTime, duration, type and description') }
                     
                   </div>
                   <div className="center_button">
-                  <Link  class="btn btn-primary" to="/eventsPage" onClick={this.addEvent}><i class="fas fa-save"> Save</i></Link>
+                  <Link  class="btn btn-primary" to={`/eventsPage/${this.props.match.params.babyId}`} onClick={this.addEvent}><i class="fas fa-save"> Save</i></Link>
                   </div>
                   </div>
                 </div>

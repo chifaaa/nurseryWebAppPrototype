@@ -7,6 +7,7 @@ import ParentsPage from './parentsPage';
 import BabiesPage from './babiesListPage';
 import GroupsPage from './groupsPage';
 import ClubsPage from './clubsPage';
+import ClubsPlanning from './clubsPlanning';
 
 import HomePage from './homePage';
 
@@ -67,6 +68,7 @@ function App() {
       <Route exact path="/clubsPage/ClubNew" component={AddClub}/>
       <Route exact path="/clubsPage/clubsList" component={ClubsList}/>
       <Route path="/modifyclub/:id/:name/:description/:day"  component={ModifyClub}/>
+      <Route exact path="/clubsPlanning" component={ClubsPlanning}/>
 
       <Route exact path="/eventsPage/:babyId" component ={EventsList}/>
       <Route exact path="/eventsPage/EventNew/:babyId" component={AddEvent}/>
