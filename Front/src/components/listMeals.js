@@ -42,7 +42,7 @@ class MealsList extends Component {
 
                             return (
                                 <div>
-                                    <h4 className="section-title h1">{el.day.substring(0, 10)}</h4>
+                                    <h4 className="section-title h1"  style={{color:'rgb(221, 156, 75)'}}>{el.day.substring(0, 10)}</h4>
                                         <div style={{display:'flex'}}>
                                             <div className="frontside" style={{marginLeft:'5px'}}>
                                                 <div className="card" style={{height:'120px'}}>
@@ -114,11 +114,11 @@ class MealsList extends Component {
                                                 </div>
                                             </div>
                                 </div>
-                                                           <div className="card" style={{width:'200px'}}><div className= "center_button">
+                                                          <div style={{display:'flex',flexDirection:'column', alignItems:'center'}}> <div className="card" style={{width:'200px'}}><div className= "center_button" >
                                                                                     <a href="#" class="btn btn-primary  btn-delete"> <i class="fas fa-trash" > <span onClick={() => { this.delete(el._id) }} >Delete</span></i></a>
                                                                                     <Link class="btn btn-primary" to={`/modifymeal/${el._id}/${el.day}/${el.mainMeal}/${el.dessert}/${el.snack}`}><i class="fas fa-edit"> Edit</i></Link>
 
-                                                            </div></div> 
+                                                            </div></div> </div>
                                 </div>
                             
                             )

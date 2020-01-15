@@ -1,14 +1,12 @@
 
     import React from 'react';
-    import Car from './carousel';
     import '../App.css';
-    import { Features } from './features';
     
     
     function Footer() {
       return (
         
-<footer>
+<footer >
     <p>
         Follow Us On: 
         
