@@ -164,12 +164,16 @@ exports.update = (req, res) => {
     });
 };
 
-// Delete a baby with the specified noteId in the request
+// Delete a baby with the specified babyId in the request
 exports.delete = (req, res) => {
     Baby.findByIdAndRemove(req.params.babyId)
         .then(baby => {
             parentCtr.removeBabyFromParent(baby.parent, baby._id)
             .then((parentDoc) => res.send(parentDoc))
+            
+            groupCtr.removeBabyFromGroup(baby.group, baby._id)
+            .then((groupDoc) => res.send(groupDoc))
+           
             if (!baby) {
                 return res.status(404).send({
                     message: "Baby not found with id " + req.params.babyId

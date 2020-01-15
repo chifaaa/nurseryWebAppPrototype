@@ -20,6 +20,18 @@ exports.addAssistantToGroup = (groupId, assistantId) => {
     }, { new: true }).exec()
 }
 
+exports.removeBabyFromGroup = (groupId, babyId) => {
+    return Group.findByIdAndUpdate(groupId, {
+        $pull: { babies: babyId }
+    }, { new: true }).exec()
+}
+
+exports.removeAssistantFromGroup = (groupId, assistantId) => {
+    return Group.findByIdAndUpdate(groupId, {
+        $pull: { assistants: assistantId }
+    }, { new: true }).exec()
+}
+
 // Create and Save a new Note
 exports.create = (req, res) => {
     console.log('req', req)

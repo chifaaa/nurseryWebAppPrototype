@@ -166,6 +166,10 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
     Assistant.findByIdAndRemove(req.params.assistantId)
         .then(assistant => {
+
+            groupCtr.removeAssistantFromGroup(assistant.assistantGroup, assistant._id)
+            .then((groupDoc) => res.send(groupDoc))
+
             if (!assistant) {
                 return res.status(404).send({
                     message: "Assistant not found with id " + req.params.assistantId
