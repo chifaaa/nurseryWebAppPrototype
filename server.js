@@ -32,6 +32,7 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 
+require('./app/routes/user.js')(app)
 const RoutingGroup = require('./app/routes/group.js')
 RoutingGroup(app);
 const RoutingBaby = require('./app/routes/baby.js')
