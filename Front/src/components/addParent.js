@@ -73,11 +73,10 @@ class ParentAdd extends Component {
 
      
 
-        <section id="team" className="pb-5">
+        <section id="team" >
 
-<div className="col-xs-12 col-sm-6 col-md-4">
-<div className="edit">
-  <div className="frontside" >
+<div className="edit" >
+  <div className="frontside"style={{marginLeft:'540px'}} >
     <div className="card" style={{height:'fit-content'}}>
 
       <div className="card-body">
@@ -126,7 +125,6 @@ class ParentAdd extends Component {
       </div>
     </div>
   </div>
-</div>
 </section>
 
 
