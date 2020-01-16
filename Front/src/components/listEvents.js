@@ -51,9 +51,9 @@ class EventsList extends Component {
                         {this.state.events.map((el, i) => {
 
                             return (
-                                <div className="col-xs-12 col-sm-6 col-md-4">
-                                            <div className="frontside">
-                                                <div className="card" style={{height:'fit-content'}}>
+                                <div>
+                                            <div className="frontside"style={{width:'800px'}}>
+                                                <div className="card" style={{height:'fit-content',width:'800px'}}>
                                                     <div className="card-body text-center">
                                                     <p className="card-title"> {el.type}</p>
                                                         <p className="card-text"> {el.description}</p>

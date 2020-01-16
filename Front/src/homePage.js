@@ -8,7 +8,7 @@ function HomePage() {
   return (
     
 
-            <div className="App">
+   <div className="App">
 
      <Car/>
      <Features/>
