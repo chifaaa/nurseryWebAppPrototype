@@ -37,6 +37,7 @@ import AddMeal from './components/addMeal';
 import EventsList from './components/listEvents';
 import EventsPage from './eventsPage';
 import AddEvent from './components/addEvent';
+import Contact from "./contact"
 
 import Header from './components/header';
 import Footer from './components/footer';
@@ -46,8 +47,10 @@ function App() {
     
     <Router>
       <Route path ={'/'} component ={Header}/>
+
       <Route exact path ={'/'} component ={HomePage}/>
 
+      <Route path ={'/contact'} component ={Contact}/>
       <Route exact path="/babiesListPage" component ={BabiesPage}/>
       <Route exact path="/babiesListPage/BabyNew/:parentId" component={BabyAdd}/>
       {/* <Route exact path="/babiesListPage/BabyList" component={BabyList}/>  */}

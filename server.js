@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 var cors = require('cors')
-
+const nodemailer = require("nodemailer");
 
 // create express app
 const app = express();
