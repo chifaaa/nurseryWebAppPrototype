@@ -38,13 +38,14 @@ class GroupList extends Component {
           <h5 className="section-title h1">Groups' List'</h5>
           <div className="row">
               {this.state.groups.map((el, i) => {
+                  const cardBackgroundColor = (el.groupName == "Butterflies") ? 'rgb(209, 236, 253)' : (el.groupName == "Little Birds") ? 'rgb(255, 252, 207)' : 'rgb(247, 203, 221)';
 
                   return (
                       <div className="col-xs-12 col-sm-6 col-md-4">
                           <div className="image-flip" ontouchstart="this.classList.toggle('hover');">
                               <div className="mainflip">
-                                  <div className="frontside">
-                                      <div className="card">
+                                  <div className="frontside" >
+                                      <div className="card" style={{backgroundColor:`${cardBackgroundColor}`}}>
                                           <div className="card-body text-center">
                                               <h3 className="card-title">{el.groupName}</h3>
                                               <strong> Assistants:</strong> 
@@ -60,7 +61,7 @@ class GroupList extends Component {
                                       </div>
                                   </div>
                                   <div className="backside" style={{height:'fit-content'}}>
-                                      <div className="card" style={{height:'fit-content'}}>
+                                      <div className="card" style={{height:'fit-content',backgroundColor:`${cardBackgroundColor}`}}>
                                           <div className="card-body text-center mt-4">
                                               <h4 className="card-title">{el.groupName}</h4>
                                               <strong>Babies' Names:</strong>
