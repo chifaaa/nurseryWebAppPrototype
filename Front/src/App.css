@@ -1,6 +1,5 @@
 #root{
   background-color: #FDF4F8;
-
   padding-top:120px;
   padding-bottom:0px;
   margin-bottom: 0px;
@@ -105,7 +104,7 @@ margin-top: 50px;
 
 }
 .country-link{
-  color:rgb(0, 104, 250);
+  color:rgb(252, 125, 178);
 
 }
 .last-section-box{
@@ -336,4 +335,10 @@ width: 100%;
 .section-title,h1{
   color:rgb(151, 126, 136)!important;
  
+}
+link,a{
+  text-decoration: none!important;
+} 
+Link,a :hover{
+  color:rgb(87, 71, 77) !important;
 }

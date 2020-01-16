@@ -38,7 +38,7 @@ class ParentList extends Component {
           <h5 className="section-title h1">Parent's List'</h5>
           <div className="row">
               {this.state.parents.map((el, i) => {
-                  const defaultImgUrl = el.sex == "male" ? "https://sophieriehl.com/wp-content/uploads/2017/06/male.png" : "http://www.victoire-avocats.eu/wp-content/uploads/2018/12/circled_user_female1600.png"
+                  const defaultImgUrl = el.sex == "male" ? "https://counterintuity.com/wp-content/uploads/2019/08/placeholder-male.gif" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmb39qYBfZFtaxBh4SEz0p_EgdkVcx59PueGoYgVsDKcaVAxB6Xg&s"
 
                   return (
                       <div className="col-xs-12 col-sm-6 col-md-4">

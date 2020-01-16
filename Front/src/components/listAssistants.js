@@ -44,7 +44,7 @@ class AssistantList extends Component {
                                   <div className="frontside">
                                       <div className="card">
                                           <div className="card-body text-center">
-                                              <p><img className=" img-fluid" src={'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Crystal_Clear_kdm_user_female.svg/1024px-Crystal_Clear_kdm_user_female.svg.png'} alt="card image" /></p>
+                                              <p><img className=" img-fluid" src={'https://media.istockphoto.com/vectors/person-gray-photo-placeholder-woman-vector-id1132192691?k=6&m=1132192691&s=170667a&w=0&h=zYvsg479tOpCjbdDypeDxxulqt3izfiYhYJuaZNLSFQ='} alt="card image" /></p>
                                               <h4 className="card-title">{el.firstName} {el.lastName}</h4>
                                               
                                               <p className="card-text"><strong> is responsible for group :</strong> {el.groupName}</p>
