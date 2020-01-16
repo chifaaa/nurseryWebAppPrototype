@@ -36,6 +36,8 @@ import MealsList from './components/listMeals';
 import ModifyMeal from './components/modifyMeal';
 import AddMeal from './components/addMeal';
 
+import ContactForm from './components/ContactForm';
+
 
 import Header from './components/header';
 import Footer from './components/footer';
@@ -76,8 +78,9 @@ function App() {
       <Route exact path="/mealsPage" component ={MealsPage}/>
       <Route exact path="/mealsPage/MealNew" component={AddMeal}/>
       <Route exact path="/mealsPage/mealsList" component={MealsList}/>
-      <Route path="/modifymeal/:id/:day/:description"  component={ModifyMeal}/>
-
+      <Route path="/modifymeal/:id/:day/:lunch/:dessert/:snack"  component={ModifyMeal}/>
+      
+      <Route path ={'/'} component ={ContactForm}/>
 
       <Route path ={'/'} component ={Footer}/>
 

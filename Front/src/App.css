@@ -298,4 +298,40 @@ width: 100%;
 .center_button{
   display: flex;
   justify-content: center;
+  margin:180px;
+  justify-content: space-around;
+ 
+
+
+}
+.card-titlee{
+  display: flex;
+  justify-content: center;
+  color:#FFB458;
+  size: 5rem;
+}
+.meal-container{
+  display:flex;
+  justify-content: space-around;
+  
+}
+
+.meal-bloc{
+  /* border:solid 0.2rem; */
+  width: 100%;
+  color: #FFB458;
+  /* height: 100%; */
+
+}
+.meal-blocc{
+  /* border:solid  0.2rem; */
+  width: 15%;
+  color: #FFB458;
+  /* height: 100%; */
+  
+}
+.meal-bl{
+  height: 85%;
+  border:solid  0.1rem;
+  color: #FFB458;
 }

@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-var cors = require('cors')
+var cors = require('cors');
+const nodemon = require('nodemon');
+const nodemailer = require('nodemailer');
 
 
 // create express app
@@ -63,3 +65,16 @@ RoutingMeal(app);
 app.listen(3000, () => {
     console.log("Server is listening on port 3000");
 });
+
+nodemon({
+    
+},
+
+)
+   .on('restart', function() {
+    console.log('Server restarted!');
+  })
+  .once('exit', function () {
+    console.log('Shutting down server');
+    process.exit();
+  });

@@ -1,4 +1,4 @@
-const Club = require('../models/mealsmodel.js');
+const Meal = require('../models/mealsmodel.js');
 
 
 
@@ -6,9 +6,9 @@ const Club = require('../models/mealsmodel.js');
 exports.create = (req, res) => {
     console.log(" Meal create was called")
     // Validate request
-    if (!(req.body.day && req.body.description)) {
+    if (!(req.body.day && req.body.lunch && req.body.dessert && req.body.snack)) {
         return res.status(400).send({
-            message: "Meal's description and day can not be empty"
+            message: "Meal's lunch and day can not be empty"
         });
     }
 
@@ -17,7 +17,9 @@ exports.create = (req, res) => {
     // Create a Meal
     const meal = new Meal({
         day: req.body.day,
-        description: req.body.description,
+        lunch: req.body.lunch,
+        dessert: req.body.dessert,
+        snack: req.body.snack,
         
 
     });
@@ -77,16 +79,18 @@ exports.findOne = (req, res) => {
 // Update a Meal identified by the mealId in the request
 exports.update = (req, res) => {
     // Validate Request
-    if (!(req.body.day && req.body.description)) {
+    if (!(req.body.day && req.body.lunch && req.body.dessert && req.body.snack)) {
         return res.status(400).send({
-            message: "Meal's description and day can not be empty"
+            message: "Meal's lunch and day can not be empty"
         });
     }
 
         // Find Meal and update it with the request body
         Meal.findByIdAndUpdate(req.params.mealId, {
             day: req.body.day,
-            description: req.body.description,
+            lunch: req.body.lunch,
+            dessert: req.body.dessert,
+            snack: req.body.snack,
           
             
 

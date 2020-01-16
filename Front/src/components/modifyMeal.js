@@ -8,7 +8,9 @@ class ModifyMeal extends Component {
     this.state = ({
       id: '',
       day: '',
-      description: '',
+      lunch: '',
+      dessert: '',
+      snack: '',
       
     })
   }
@@ -18,7 +20,9 @@ class ModifyMeal extends Component {
     this.setState({
       id: this.props.match.params.id,
       day: this.props.match.params.day,
-      description: this.props.match.params.description,
+       lunch: this.props.match.params.lunch,
+       dessert: this.props.match.params.dessert,
+       snack: this.props.match.params.snack,
      
 
 
@@ -32,7 +36,9 @@ class ModifyMeal extends Component {
   modifyMeal = () => {
     let x = {
         day: this.state.day,
-        description: this.state.description,
+        lunch: this.state.lunch,
+        dessert: this.state.dessert,
+        snack: this.state.snack,
         
     }
     axios.put("http://localhost:3000/meal/update/" + this.state.id, x)
@@ -66,9 +72,21 @@ class ModifyMeal extends Component {
 
 
 
-                  <div> <label>Description :</label>
+                  <div> <label>Lunch :</label>
 
-                    <input value={this.state.description} type="text" onChange={(e) => { this.setState({ description: e.target.value }) }} />
+                    <input value={this.state.lunch} type="text" onChange={(e) => { this.setState({ lunch: e.target.value }) }} />
+
+                  </div>
+
+                  <div> <label>Dessert :</label>
+
+                    <input value={this.state.dessert} type="text" onChange={(e) => { this.setState({ dessert: e.target.value }) }} />
+
+                  </div>
+
+                  <div> <label>Snack :</label>
+
+                    <input value={this.state.snack} type="text" onChange={(e) => { this.setState({ snack: e.target.value }) }} />
 
                   </div>
                   

@@ -6,7 +6,9 @@ class AddMeal extends Component {
     super(props)
     this.state=({
         day:'',
-        description:'',
+        lunch:'',
+        dessert:'',
+        snack:'',
   
 
     })
@@ -17,22 +19,32 @@ class AddMeal extends Component {
     day:e.target.value
   })}
 
-  setDescription=e=> {  
+  setLunch=e=> {  
     this.setState({
-    description:e.target.value
+    lunch:e.target.value
+  })}
+  
+  setDessert=e=> {  
+    this.setState({
+    dessert:e.target.value
+  })}
+
+  setSnack=e=> {  
+    this.setState({
+    snack:e.target.value
   })}
 
  
 
   addMeal = () => {
-    if (this.state.day !== '' && this.state.description !== '') {
+    if (this.state.day !== '' && this.state.lunch !== '' && this.state.dessert !== '' && this.state.snack !== '') {
     axios.post("http://localhost:3000/meal/create",{
-        day:this.state.day,description:this.state.description,
+        day:this.state.day,lunch:this.state.lunch,dessert:this.state.dessert,snack:this.state.snack,
     })
  
   }
 
-else { alert('Required fields!!  Day and Description') }
+else { alert('Required fields!!  Day and lunch') }
 }
 
        render() { 
@@ -53,15 +65,22 @@ else { alert('Required fields!!  Day and Description') }
           
                   <div>
                   <div> <label>Day:</label>
-                      <input onChange={this.setDay} type="text" />
+                      <input  type="date" onChange={this.setDay}  />
                     </div>
           
           
           
-                    <div> <label>Description :</label>
-                      <input onChange={this.setDescription} type="text" />
+                    <div> <label>Lunch :</label>
+                      <input onChange={this.setLunch} type="text" />
                     </div>
           
+                    <div> <label>Dessert :</label>
+                      <input onChange={this.setDessert} type="text" />
+                    </div>
+                  
+                    <div> <label>Snack :</label>
+                      <input onChange={this.setSnack} type="text" />
+                    </div>
           
                    
                  
