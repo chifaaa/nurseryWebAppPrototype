@@ -102,7 +102,7 @@ return (
           
         </div>
         <div className="center_button">
-        <Link  class="btn btn-primary" to="/assistantsPage/AssistantsList" onClick={this.modifyAssistant}><i class="fas fa-save"> Save</i></Link>
+        <Link  class="btn btn-primary" to="/assistantsPage" onClick={this.modifyAssistant}><i class="fas fa-save"> Save</i></Link>
        
         </div>
 

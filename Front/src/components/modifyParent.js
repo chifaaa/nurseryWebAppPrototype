@@ -102,7 +102,7 @@ return (
 
           </div>
           <div className="center_button">
-          <Link  class="btn btn-primary" to="/parentsPage/ParentsList" onClick={this.modifyParent}><i class="fas fa-save"> Save</i></Link>
+          <Link  class="btn btn-primary" to="/parentsPage" onClick={this.modifyParent}><i class="fas fa-save"> Save</i></Link>
           <Link  class="btn btn-primary" to={`/babiesListPage/BabyNew/${this.state.id}`}><i class="fas fa-plus">Add Baby</i></Link>
           </div>
 

@@ -119,7 +119,7 @@ class ParentAdd extends Component {
           
         </div>
         <div className="center_button">
-        <Link  class="btn btn-primary" to="/parentsPage/ParentsList" onClick={this.addParent}><i class="fas fa-save"> Save</i></Link>
+        <Link  class="btn btn-primary" to="/parentsPage" onClick={this.addParent}><i class="fas fa-save"> Save</i></Link>
         </div>
         </div>
       </div>

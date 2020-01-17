@@ -66,7 +66,7 @@ return (
             
           </div>
           <div className="center_button">
-          <Link  class="btn btn-primary" to="/groupsPage/groupsList" onClick={this.modifyGroup}><i class="fas fa-save"> Save</i></Link>
+          <Link  class="btn btn-primary" to="/groupsPage" onClick={this.modifyGroup}><i class="fas fa-save"> Save</i></Link>
           {/* <Link  class="btn btn-primary" to={`/inscription/BabyNew/${this.state.id}`}><i class="fas fa-plus">Add Baby</i></Link> */}
           </div>
 
