@@ -112,7 +112,7 @@ class ParentAdd extends Component {
             <input onChange={this.setEmail} type="text"  />
           </div>
 
-          <div> <label>Adress: </label>
+          <div> <label>Address: </label>
             <input onChange={this.setAdress} type="text" />
           </div>
           

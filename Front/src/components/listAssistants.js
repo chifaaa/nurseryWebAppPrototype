@@ -32,7 +32,7 @@ class AssistantList extends Component {
 
 <section id="team" className="pb-5">
       <div className="container">
-          <h5 className="section-title h1">Maternal Assistant's List</h5>
+          <h5 className="section-title h1">Maternal Assistants' List</h5>
           <div className="row">
               {this.state.assistants.map((el, i) => {
                 

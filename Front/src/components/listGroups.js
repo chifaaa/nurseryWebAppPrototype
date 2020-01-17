@@ -35,7 +35,7 @@ class GroupList extends Component {
 
       <section id="team" className="pb-5">
       <div className="container">
-          <h5 className="section-title h1">Groups' List'</h5>
+          <h5 className="section-title h1">Groups' List</h5>
           <div className="row">
               {this.state.groups.map((el, i) => {
                   const cardBackgroundColor = (el.groupName == "Butterflies") ? 'rgb(209, 236, 253)' : (el.groupName == "Little Birds") ? 'rgb(255, 252, 207)' : 'rgb(247, 203, 221)';

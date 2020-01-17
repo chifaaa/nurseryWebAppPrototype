@@ -92,7 +92,7 @@ return (
               <input value={this.state.email} type="text" onChange={(e) => { this.setState({ email: e.target.value }) }} />
             </div>
 
-            <div> <label>Adress: </label>
+            <div> <label>Address: </label>
               <input value={this.state.adress} type="text" onChange={(e) => { this.setState({ adress: e.target.value }) }} />
             </div>
             
