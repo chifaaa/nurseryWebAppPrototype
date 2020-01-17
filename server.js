@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 var cors = require('cors')
-
+const nodemailer = require("nodemailer");
 
 // create express app
 const app = express();
@@ -57,6 +57,37 @@ RoutingMeal(app);
 
 //   )
 // });
+
+app.post("/sendmail", (req, res) => {
+	// consosendmaille.log("alooooo");
+	console.log(req, "req");
+	var transporter = nodemailer.createTransport({
+		service: "gmail",
+		auth: {
+			user: "jobranamairi4119@gmail.com",
+			pass: "Jobran4119."
+        },
+        debug: true, // show debug output
+        logger: true // log information in console
+	});
+
+	var mailOptions = {
+		from: "jobranamairi4119@gmail.com",
+		to: req.body.email,
+		subject: req.body.subject,
+		text: req.body.text
+	};
+
+	transporter.sendMail(mailOptions, function(error, info) {
+		if (error) {
+            console.log(error);
+            res.send("error send it")
+		} else {
+            console.log("Email sent: " + info.response);
+            res.send("send it")
+		}
+	});
+});
 
 // listen for requests
 app.listen(3000, () => {

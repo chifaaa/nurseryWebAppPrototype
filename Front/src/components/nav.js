@@ -96,7 +96,7 @@ const Navb = (props) => {
             </UncontrolledDropdown>
 
             <NavItem>
-              <NavLink href="/components/">Contacts</NavLink>
+              <NavLink href="/contact">Contacts</NavLink>
             </NavItem>
 
           </Nav>
